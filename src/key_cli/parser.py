@@ -12,6 +12,7 @@ from .commands.record import run as record
 from .commands.shell import run as shell
 from .commands.version import run as version
 from .commands.tool import run as tool
+from .commands.sysmon import run as sysmon
 
 
 def _json(parser: argparse.ArgumentParser) -> None:
@@ -30,6 +31,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="print the key-cli version",
     )
     commands = parser.add_subparsers(dest="command", metavar="COMMAND")
+
+    sysmon_parser = commands.add_parser(
+        "sysmon", help="sample Linux system metrics", add_help=False
+    )
+    sysmon_parser.set_defaults(handler=sysmon)
 
     tool_parser = commands.add_parser(
         "tool", help="evaluate Spotlight calculator, currency and time tools"

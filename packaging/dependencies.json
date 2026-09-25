@@ -2,9 +2,10 @@
   "name": "key-cli",
   "repository": "StatIndet/key-cli",
   "versionFile": "src/key_cli/VERSION",
-  "arch": "any",
+  "arch": "x86_64",
   "sourceRoots": [
     "src",
+    "native",
     "scripts",
     "tests",
     "packaging",
@@ -36,6 +37,21 @@
     {
       "package": "python-wheel",
       "purpose": "Wheel tooling",
+      "defaultInstall": true
+    },
+    {
+      "package": "cmake",
+      "purpose": "Native system monitor build",
+      "defaultInstall": true
+    },
+    {
+      "package": "ninja",
+      "purpose": "Native build executor",
+      "defaultInstall": true
+    },
+    {
+      "package": "qt6-base",
+      "purpose": "Qt Core sampling library",
       "defaultInstall": true
     }
   ],
@@ -125,12 +141,22 @@
           "package": "glib2",
           "purpose": "GIO desktop opening with Terminal=true support",
           "defaultInstall": true
+        },
+        {
+          "package": "qt6-base",
+          "purpose": "Native system sampler runtime",
+          "defaultInstall": true
         }
       ],
       "optional": [
         {
           "package": "key-cli-keyboard-access",
           "purpose": "Whole keyboard event device access",
+          "defaultInstall": false
+        },
+        {
+          "package": "key-cli-cpu-power-access",
+          "purpose": "Restricted CPU energy helper authorization",
           "defaultInstall": false
         },
         {
@@ -185,6 +211,21 @@
         {
           "package": "systemd",
           "purpose": "logind and udev uaccess",
+          "defaultInstall": true
+        }
+      ],
+      "optional": []
+    },
+    "key-cli-cpu-power-access": {
+      "runtime": [
+        {
+          "package": "key-cli",
+          "purpose": "Owns the native CPU energy helper",
+          "defaultInstall": true
+        },
+        {
+          "package": "libcap",
+          "purpose": "File capability management",
           "defaultInstall": true
         }
       ],

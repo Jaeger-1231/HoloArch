@@ -40,6 +40,9 @@ shellcheck -s bash -x "${shell_files[@]}"
 "${ruff_command[@]}" check "${repo_root}"
 "${python_bin}" -m compileall -q "${repo_root}/src"
 PYTHONPATH="${repo_root}/src${PYTHONPATH:+:${PYTHONPATH}}" "${python_bin}" -m pytest
+cmake -S "${repo_root}/native" -B "${repo_root}/native/build" -G Ninja -DBUILD_TESTING=ON
+cmake --build "${repo_root}/native/build"
+ctest --test-dir "${repo_root}/native/build" --output-on-failure --no-tests=error
 
 if [[ "${1:-}" != "--build" ]]; then
     exit 0

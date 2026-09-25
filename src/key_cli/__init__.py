@@ -12,8 +12,14 @@ from .utils.output import emit_result, fail
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    parser = build_parser()
     arguments = list(argv) if argv is not None else sys.argv[1:]
+    if arguments[:1] == ["sysmon"]:
+        from argparse import Namespace
+
+        from .commands.sysmon import run
+
+        return run(Namespace(arguments=arguments[1:]))
+    parser = build_parser()
     try:
         args = parser.parse_args(arguments)
     except SystemExit as exc:

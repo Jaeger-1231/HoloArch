@@ -5,6 +5,10 @@ describes the stable external contract consumed by Clavis. A breaking response c
 requires updates here and a corresponding public-contract test; Python module layout and
 function names are not part of the protocol.
 
+`key sysmon` uses the migrated [system monitor schema](sysmon.md). Its native process writes
+JSON/JSONL directly to stdout after the Python dispatcher calls `exec`; schema version 1,
+units, null values and stream cadence retain their original meanings.
+
 ## Envelope
 
 JSON output is requested with `--json` or `--format json` where the command supports the

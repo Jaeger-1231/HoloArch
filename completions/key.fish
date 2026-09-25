@@ -3,6 +3,7 @@ complete -c key -f -n '__fish_use_subcommand' -a ipc -d 'route Clavis IPC'
 complete -c key -f -n '__fish_use_subcommand' -a record -d 'record the screen'
 complete -c key -f -n '__fish_use_subcommand' -a audio -d 'record audio to M4A'
 complete -c key -f -n '__fish_use_subcommand' -a clipboard -d 'operate on clipboard history'
+complete -c key -f -n '__fish_use_subcommand' -a sysmon -d 'sample Linux system metrics'
 complete -c key -f -n '__fish_use_subcommand' -a doctor -d 'check runtime dependencies'
 complete -c key -f -n '__fish_use_subcommand' -a version -d 'show version metadata'
 
@@ -17,6 +18,8 @@ complete -c key -f -n '__fish_seen_subcommand_from audio' -a 'start status stop 
 complete -c key -f -n '__fish_seen_subcommand_from clipboard' -a 'list inspect restore delete clear status config'
 complete -c key -f -n '__fish_seen_subcommand_from record audio; and not __fish_seen_subcommand_from watch' -l json -d 'write JSON'
 complete -c key -f -n '__fish_seen_subcommand_from clipboard' -l format -a json -d 'JSON response'
+complete -c key -f -n '__fish_seen_subcommand_from sysmon' -a 'snapshot stream system cpu memory gpu disk network battery processes modules'
+complete -c key -f -n '__fish_seen_subcommand_from sysmon' -l format -a 'json jsonl text'
 
 complete -c key -f -n '__fish_seen_subcommand_from clipboard; and __fish_seen_subcommand_from config' -l max-items -x -a '50 100 150 200 250 300 350 400 450 500 550 600 650 700 750' -d 'Saved history limit; trims on next save'
 complete -c key -f -n '__fish_seen_subcommand_from clipboard; and __fish_seen_subcommand_from list' -l limit -x -d 'Maximum entries to return (1–750)'

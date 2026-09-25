@@ -3,8 +3,9 @@
 ## Responsibilities
 
 key-cli is an independent repository. It owns the `key shell`, `key ipc`, `key record`,
-`key audio`, `key keyboard`, `key clipboard` and `key doctor` commands, their backend/process identity
-behavior, packaging, and the machine-facing JSON protocol. Clavis consumes these public
+`key audio`, `key keyboard`, `key clipboard`, `key sysmon` and `key doctor` commands, their backend/process identity
+behavior, packaging, and the machine-facing JSON/JSONL protocol. `key sysmon` replaces Python
+with the native sampler using `exec`; CPU energy access is limited to a separate helper. Clavis consumes these public
 interfaces; key-cli tests must not depend on `../clavis` or `../keytop`.
 
 ## Test policy
@@ -34,7 +35,8 @@ being reviewed.
 
 Use `.venv` with `python3 -m venv .venv` and
 `.venv/bin/python -m pip install -e '.[dev]'`. Ordinary source edits need no reinstall;
-metadata changes do, and existing watchers require an explicit restart.
+metadata changes do, and existing watchers require an explicit restart. Native sysmon edits
+require a CMake rebuild; do not turn the sampler into a Python extension or proxy its stream.
 `scripts/check.sh` runs daily quality/tests; `scripts/check.sh --build` adds wheel/install
 verification. Do not run the same checks separately before that entry point.
 Source deployment uses `scripts/install.sh` / `scripts/uninstall.sh`, a dedicated venv

@@ -2,12 +2,12 @@
 
 The command-line companion for [Clavis Shell](https://github.com/StatIndet/quickshell).
 It provides the `key` command for shell lifecycle and IPC, screen/audio recording,
-saved-file actions, clipboard history and event-driven Caps Lock / Num Lock state.
+saved-file actions, clipboard history, event-driven Caps Lock / Num Lock state, and
+Linux system metrics.
 
 Clavis owns the interface; key-cli owns these independent system backends and their
-[JSON/JSONL protocol](docs/protocol.md). [keytop](https://github.com/StatIndet/keytop)
-provides kernel/system information snapshots and metrics directly to Clavis through
-its own JSONL stream.
+[JSON/JSONL protocol](docs/protocol.md). `key sysmon` replaces the Python command
+process with an independent C++ sampler, which writes JSON/JSONL directly to Clavis.
 
 ## Scope
 
@@ -19,18 +19,24 @@ its own JSONL stream.
 | Open or reveal saved files | `key file` |
 | Clipboard capture, history and configuration | `key clipboard` |
 | Caps Lock / Num Lock snapshots and events | `key keyboard` |
+| System snapshots and live metrics | `key sysmon` |
 | Runtime diagnostics and version | `key doctor`, `key version` |
 
 Clavis owns the UI and its native weather, media, lyrics and compositor integrations.
-Key-cli does not forward system metrics or implement a second system monitor.
+The sampler and its optional CPU energy reader have separate process and permission boundaries.
+The Python wheel contains the command dispatcher only; use the source installer or Arch package
+to deploy the native programs alongside it.
 
 ## Development
 
-Requires Linux and Python 3.10+. Configure once in the checkout:
+Requires Linux, Python 3.10+, CMake, Ninja, a C++17 compiler and Qt 6 Core.
+Configure once in the checkout:
 
 ```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -e '.[dev]'
+cmake -S native -B native/build -G Ninja
+cmake --build native/build
 ```
 
 Optionally select this environment in fish (this also changes `python`/`pip`, not only `key`):
@@ -41,7 +47,8 @@ fish_add_path --universal --move ~/Projects/key-cli/.venv/bin
 
 New `key` processes now read ordinary Python edits directly. No wheel, makepkg or system
 installation is needed. Reinstall the editable project after dependency/entry-point
-metadata changes. Existing watchers keep already imported modules; restart the specific
+metadata changes. Native sampler edits need `cmake --build native/build` before they take
+effect. Existing watchers keep already imported modules; restart the specific
 watcher when needed. Rebuild `.venv` after moving/deleting the checkout or incompatible
 Python upgrades. Nothing silently edits your fish configuration.
 
@@ -249,7 +256,7 @@ scripts/check.sh         # daily source checks
 scripts/check.sh --build
 ```
 
-The daily check runs Ruff, compilation and pytest against current source. `--build`
+The daily check runs Ruff, Python compilation, pytest, native build and CTest against current source. `--build`
 adds wheel creation/content validation and isolated install verification; it is separate
 from distribution package validation. Format only changed files. Tests do not depend on
 Clavis or keytop checkouts.
@@ -273,7 +280,8 @@ Arch x86_64 packaging and GitHub Actions release workflows are included. Version
 See [GitHub release setup](docs/releasing.md) and the
 [dependency inventory](docs/dependencies.md). Each repository remains independently buildable.
 
-AUR packages: `key-cli` and optional `key-cli-keyboard-access`. The existing
+AUR packages: `key-cli` and optional `key-cli-keyboard-access` and
+`key-cli-cpu-power-access`. The existing
 [source installer](docs/installation.md) remains available and independent of Arch packaging.
 
 ## License

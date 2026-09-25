@@ -40,14 +40,14 @@ def safe_path(path):
         raise ValueError(f"Expected a file: {path}")
 
 
-def atomic(path, data):
+def atomic(path, data, mode=0o644):
     safe_path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, name = tempfile.mkstemp(prefix=".key-cli-", dir=path.parent)
     try:
         with os.fdopen(fd, "wb") as stream:
             stream.write(data)
-        os.chmod(name, 0o644)
+        os.chmod(name, mode)
         os.replace(name, path)
     finally:
         Path(name).unlink(missing_ok=True)
@@ -87,10 +87,10 @@ class OwnedFiles:
     def save(self):
         atomic(self.path, (json.dumps(self.data, indent=2) + "\n").encode())
 
-    def write(self, path, data=None, link=None):
+    def write(self, path, data=None, link=None, mode=0o644):
         self.check(path)
         if link is None:
-            atomic(path, data)
+            atomic(path, data, mode)
         else:
             path.parent.mkdir(parents=True, exist_ok=True)
             path.unlink(missing_ok=True)
@@ -127,6 +127,8 @@ def layout(root):
         share / "systemd/user" / UNIT: BASE / "systemd/user" / UNIT,
         share / "packaging/udev" / RULE: BASE / "packaging/udev" / RULE,
         share / "completions/key.fish": BASE / "completions/key.fish",
+        prefix / "bin/key-sysmon": BASE / "native/build/bin/key-sysmon",
+        prefix / "libexec/key-cli/key-cpu-power": BASE / "native/build/bin/key-cpu-power",
     }
     # Installed copy is standalone; its resources live alongside it.
     if (Path(__file__).parent / "systemd").exists():
@@ -272,7 +274,19 @@ def deploy(args):
     wheels = sorted(Path(args.wheelhouse).glob("*.whl"))
     if not wheels:
         raise ValueError("No prepared wheels")
-    contents = {target: source.read_bytes() for target, source in resources.items()}
+    native_targets = {
+        prefix / "bin/key-sysmon": "key-sysmon",
+        prefix / "libexec/key-cli/key-cpu-power": "key-cpu-power",
+    }
+    if not args.native_dir:
+        raise ValueError("Missing prepared native binaries")
+    native_dir = Path(args.native_dir)
+    contents = {
+        target: (native_dir / name).read_bytes()
+        if (name := native_targets.get(target))
+        else source.read_bytes()
+        for target, source in resources.items()
+    }
     print("Deploying prepared wheels into final environment...", flush=True)
     if environment.exists():
         shutil.rmtree(environment)
@@ -307,7 +321,7 @@ def deploy(args):
                 b"ExecStart=key clipboard watch",
                 unit_override(entry, "clipboard watch").split(b"ExecStart=\n", 1)[1].strip(),
             )
-        owned.write(target, data)
+        owned.write(target, data, mode=0o755 if target in native_targets else 0o644)
     owned.write(entry, link=str(environment / "bin/key"))
     owned.write(
         uninstaller, b'#!/bin/sh\nexec python3 "$(dirname -- "$0")/installer.py" --uninstall "$@"\n'
@@ -340,6 +354,7 @@ def main():
     )
     parser.add_argument("--deploy", action="store_true", help=argparse.SUPPRESS)
     parser.add_argument("--wheelhouse", help=argparse.SUPPRESS)
+    parser.add_argument("--native-dir", help=argparse.SUPPRESS)
     args = parser.parse_args()
     try:
         if args.keyboard == "enable" and not args.acknowledge_keyboard_access:
@@ -419,6 +434,7 @@ def main():
                             "__pycache__",
                             ".pytest_cache",
                             ".ruff_cache",
+                            ".packaging",
                         ),
                     )
                     builder = Path(temporary) / "builder"
@@ -436,6 +452,23 @@ def main():
                         ]
                     )
                     args.wheelhouse = temporary
+                    native_build = Path(temporary) / "native-build"
+                    run(
+                        [
+                            "cmake",
+                            "-S",
+                            source / "native",
+                            "-B",
+                            native_build,
+                            "-G",
+                            "Ninja",
+                            "-DCMAKE_BUILD_TYPE=Release",
+                            "-DBUILD_TESTING=OFF",
+                            "-DCMAKE_INSTALL_PREFIX=/usr/local",
+                        ]
+                    )
+                    run(["cmake", "--build", native_build])
+                    args.native_dir = str(native_build / "bin")
                 command = [
                     sys.executable,
                     Path(__file__).resolve(),
@@ -453,6 +486,8 @@ def main():
                         command += ["--apply"]
                 if args.wheelhouse:
                     command += ["--wheelhouse", args.wheelhouse]
+                if args.native_dir:
+                    command += ["--native-dir", args.native_dir]
                 if args.root == Path("/"):
                     # Use system Python, not a writable development interpreter under sudo.
                     command[0] = "/usr/bin/python3"

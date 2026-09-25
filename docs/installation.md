@@ -70,21 +70,26 @@ fish_user_paths or unit directory is cleared.
 ```
 
 Run as the desktop user, not `sudo ./scripts/install.sh`. The tool creates a temporary
-build environment, resolves/builds wheels as the user, then elevates only deployment.
+build environment, resolves/builds wheels and the native sampler as the user, then elevates only deployment.
 It uses a fresh no-cache build of this checkout, including same-version edits. It never
 executes source builds as root or uses --break-system-packages. Install Python with
 venv/ensurepip support first; native evdev builds may require a compiler, Python headers
-and Linux input headers. Missing external feature commands are reported separately.
+and Linux input headers. CMake, Ninja, a C++17 compiler and Qt 6 Core development files
+are required for the native sampler. Missing external feature commands are reported separately.
 No distribution dependency installation is automated.
 
 The final venv is created at its final path; it is neither editable nor moved from a
 temporary directory. Root-owned runtime files are installed with non-writable modes
-for other users. The CLI and all watchers still run as the desktop user.
+for other users. The CLI and all watchers still run as the desktop user. Source installation
+does not grant CPU energy access; protected RAPL counters remain unavailable until a
+separately reviewed authorization is installed.
 
 | Resource | Default location |
 | --- | --- |
 | Dedicated environment | `/usr/local/lib/key-cli/venv/` |
 | Stable entry symlink | `/usr/local/bin/key` |
+| Native sampler | `/usr/local/bin/key-sysmon` |
+| Unprivileged CPU energy helper | `/usr/local/libexec/key-cli/key-cpu-power` |
 | Clipboard base unit | `/usr/local/lib/systemd/user/clavis-clipboard.service` |
 | Fish completion | `/usr/local/share/fish/vendor_completions.d/key.fish` |
 | Installer, uninstaller and resource sources | `/usr/local/share/key-cli/` |
@@ -181,10 +186,13 @@ only selected processes. No system package removal is required to begin developm
 
 ## Arch packages
 
-`key-cli` installs into `/usr` using the system Python and declares `python-evdev`,
-`python-pyudev`, `cliphist` and `wl-clipboard` dependencies. The optional
+`key-cli` installs into `/usr` using the system Python and includes the native sampler
+and CPU energy helper. It declares `python-evdev`, `python-pyudev`, `qt6-base`,
+`cliphist` and `wl-clipboard` dependencies. The optional
 `key-cli-keyboard-access` split package supplies the existing uaccess rule. It is not a
-base-package dependency. Neither package enables or starts a user service.
+base-package dependency. `key-cli-cpu-power-access` separately grants
+`cap_dac_read_search` to `/usr/lib/key-cli/key-cpu-power` only. Neither package enables
+or starts a user service.
 
 Both `key --version` and the wheel metadata read the single `src/key_cli/VERSION` resource.
 After a metadata change, refresh an editable development environment explicitly; existing

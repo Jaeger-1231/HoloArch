@@ -15,6 +15,9 @@ tests independently of other Clavis repositories. CI installs only build, check 
 | `python-installer` | Wheel installation | Yes |
 | `python-setuptools` | Build backend | Yes |
 | `python-wheel` | Wheel tooling | Yes |
+| `cmake` | Native sampler build | Yes |
+| `ninja` | Native build executor | Yes |
+| `qt6-base` | Qt Core sampler library | Yes |
 
 ## Tests
 
@@ -43,6 +46,7 @@ This phase is used only in CI; these tools are not installer runtime requests.
 | `python>=3.10` | CLI interpreter | Yes |
 | `python-evdev>=1.7` | Keyboard events | Yes |
 | `python-pyudev>=0.24` | Keyboard discovery | Yes |
+| `qt6-base` | Native sampler runtime | Yes |
 | `cliphist` | Clipboard history | Yes |
 | `wl-clipboard` | Wayland clipboard | Yes |
 
@@ -57,6 +61,7 @@ This phase is used only in CI; these tools are not installer runtime requests.
 | Arch package | Purpose | Full install |
 | --- | --- | --- |
 | `key-cli-keyboard-access` | Whole keyboard event device access | Explicit opt-in |
+| `key-cli-cpu-power-access` | Restricted CPU energy helper authorization | Explicit opt-in |
 | `quickshell` | Shell lifecycle and IPC | Yes |
 | `gpu-screen-recorder` | Screen recording | Yes |
 | `ffmpeg` | Audio recording and GIF conversion | Yes |
@@ -64,3 +69,10 @@ This phase is used only in CI; these tools are not installer runtime requests.
 | `slurp` | Region selection | Yes |
 | `xdg-utils` | Open files and query defaults | Yes |
 | `xdg-terminal-exec` | Terminal file managers | Yes |
+
+## key-cli-cpu-power-access runtime
+
+| Arch package | Purpose | Full install |
+| --- | --- | --- |
+| `key-cli` | Owns the native CPU energy helper | Yes |
+| `libcap` | File capability management | Yes |

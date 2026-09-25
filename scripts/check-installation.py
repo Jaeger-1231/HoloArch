@@ -2,6 +2,7 @@
 """Exercise editable/regular installs, same-version update and checkout-free uninstall."""
 
 import importlib.util
+import json
 from pathlib import Path
 import shutil
 import subprocess
@@ -29,9 +30,18 @@ def main():
         root = temp / "final root with spaces"
         root.mkdir()
         args = SimpleNamespace(
-            root=root, uninstall=False, wheelhouse=str(Path(sys.argv[1]).resolve().parent)
+            root=root,
+            uninstall=False,
+            wheelhouse=str(Path(sys.argv[1]).resolve().parent),
+            native_dir=str(repo / "native/build/bin"),
         )
         installer.deploy(args)
+        assert (root / "usr/local/bin/key-sysmon").is_file()
+        assert (root / "usr/local/libexec/key-cli/key-cpu-power").is_file()
+        modules = subprocess.check_output(
+            [root / "usr/local/bin/key", "sysmon", "modules", "--format", "json"], text=True
+        )
+        assert json.loads(modules)["schemaVersion"] == 1
         python = root / "usr/local/lib/key-cli/venv/bin/python"
         imported = output(python, "import key_cli; print(key_cli.__file__)")
         assert str(root) in imported and str(repo) not in imported
