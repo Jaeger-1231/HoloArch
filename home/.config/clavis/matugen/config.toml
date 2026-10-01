@@ -10,7 +10,7 @@ output_path = "~/.config/fuzzel/colors.ini"
 [templates.holo-fcitx5]
 input_path = "~/.config/matugen/templates/fcitx5-theme.conf"
 output_path = "~/.local/share/fcitx5/themes/Matugen/theme.conf"
-post_hook = "fcitx5-remote -r"
+post_hook = "~/.local/bin/holoarch-fcitx5-theme"
 
 [templates.holo-btop]
 input_path = "~/.config/matugen/templates/btop.theme"

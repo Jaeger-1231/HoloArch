@@ -55,6 +55,16 @@ Fastfetch 使用作者另一个仓库 [StatIndet/dotfiles 的原配置](https://
 
 内屏刷新率固定为支持的 `2560x1600@165.002`，写入 `~/.config/niri/output.kdl`，按 `Tianma Microelectronics Ltd. 0x2031 Unknown` 硬件名称匹配。内屏首选模式为 60.001Hz，原先没有指定模式时 niri 自动选择了它；现已核对实际模式 165.002Hz，Fastfetch 显示 165Hz。
 
+## 微信候选框背景修复（2026-10-02）
+
+微信 4.1.13.23 内置 Qt 5.15.14，通过 Fcitx 的客户端接口绘制候选框；Kitty 使用 Wayland 输入法接口。相同主题在微信中出现灰色渐变背景。关闭微信的 niri Xray 无效，已撤回该探针；独立系统 Qt 输入框显示正常。
+
+把候选框背景改为按当前配色生成的 64×64 不透明 RGB PNG 后，用户确认恢复正常。这绕过了微信内置渲染器的背景绘制差异，保留原配色、两像素边框和候选文字布局。Matugen 模板引用 `panel-background.png`，Clavis 与原 Matugen 配置的 post hook 均运行 `holoarch-fcitx5-theme`，先原子更新图片、通知客户端重读主题，再热重载 Fcitx 配置。换壁纸后会重新生成背景，不需要重启微信。诊断图和用户输入保留本机。
+
+```bash
+~/.local/bin/holoarch-fcitx5-theme
+```
+
 ## 验收与保留项
 
 - Clavis 原生编译成功；现有 CTest 合计 **27/27 通过**。首次沙箱执行受到本地 socket 和 /run 写入限制，受影响的 9 项在允许该访问后重跑通过。

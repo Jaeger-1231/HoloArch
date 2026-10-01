@@ -23,7 +23,7 @@ post_hook = "kitty +kitten themes --reload-in=all matugen &"
 [templates.fcitx5]
 input_path = '~/.config/matugen/templates/fcitx5-theme.conf'
 output_path = '~/.local/share/fcitx5/themes/Matugen/theme.conf'
-post_hook= 'fcitx5 -r & disown '
+post_hook = "~/.local/bin/holoarch-fcitx5-theme"
 
 [templates.mako]
 input_path = '~/.config/matugen/templates/mako-colors.conf'
