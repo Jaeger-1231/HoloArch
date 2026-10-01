@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+readonly CURRENT_DIR="$HOME/.local/share/holoarch/current"
+case "${1:-status}" in
+    build)
+        exec "$HOME/Projects/HoloArch/deploy/build-clavis.sh"
+        ;;
+    promote)
+        release_dir="$(cat "$HOME/.local/state/holoarch/clavis-last-build")"
+        [[ -f "$release_dir/share/quickshell/clavis/shell.qml" ]] || exit 1
+        if [[ -L "$CURRENT_DIR" ]]; then
+            readlink -f "$CURRENT_DIR" > "$HOME/.local/state/holoarch/clavis-previous-release"
+        fi
+        ln -sfn "$release_dir" "$CURRENT_DIR.next"
+        mv -Tf "$CURRENT_DIR.next" "$CURRENT_DIR"
+        systemctl --user restart clavis-shell.service
+        ;;
+    start|stop|restart|status)
+        exec systemctl --user "${1:-status}" clavis-shell.service
+        ;;
+    log)
+        exec journalctl --user -u clavis-shell.service -b -n 100 --no-pager
+        ;;
+    rollback)
+        previous_dir="$(cat "$HOME/.local/state/holoarch/clavis-previous-release")"
+        [[ -f "$previous_dir/share/quickshell/clavis/shell.qml" ]] || exit 1
+        ln -sfn "$previous_dir" "$CURRENT_DIR.next"
+        mv -Tf "$CURRENT_DIR.next" "$CURRENT_DIR"
+        systemctl --user restart clavis-shell.service
+        ;;
+    *) printf '用法：holoarch-shell {build|promote|start|stop|restart|status|log|rollback}\n' >&2; exit 2 ;;
+esac

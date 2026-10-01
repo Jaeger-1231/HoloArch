@@ -1,0 +1,11 @@
+[Unit]
+Description=HoloArch desktop update status
+Requisite=niri.service
+After=niri.service
+
+[Service]
+Type=oneshot
+Environment="PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin"
+UnsetEnvironment=HTTP_PROXY HTTPS_PROXY ALL_PROXY http_proxy https_proxy all_proxy PYTHONPATH PYTHONHOME
+ExecStart=%h/.local/libexec/holoarch-updates.sh --once
+TimeoutStartSec=180

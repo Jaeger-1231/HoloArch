@@ -1,0 +1,128 @@
+#!/usr/bin/python3
+"""Desktop entry points for the existing HoloArch maintenance and GPU tools."""
+
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import time
+
+HOME_DIR = Path.home()
+BIN_DIR = HOME_DIR / ".local/bin"
+CACHE_DIR = Path(os.environ.get("XDG_CACHE_HOME", HOME_DIR / ".cache")) / "holoarch-updates"
+
+
+def status():
+    power = subprocess.run(
+        [str(BIN_DIR / "holo-power-mode"), "status"],
+        check=True, capture_output=True, text=True, timeout=8,
+    )
+    state = json.loads(power.stdout)
+    lines = state["tooltip"].splitlines()
+    values = dict(line.split("：", 1) for line in lines if "：" in line)
+    mode = values.get("当前模式", values.get("当前电源模式", ""))
+    gpu = values.get("显卡模式", values.get("当前显卡", ""))
+    firefox = values.get("Firefox（混合模式）", "")
+    summary = " · ".join(item for item in [mode, gpu, "Firefox：" + firefox if firefox else ""] if item)
+    if "pending" in state["class"]:
+        summary = "等待重启 · " + summary + " → " + values.get("目标显卡", "")
+    elif "mismatch" in state["class"]:
+        summary = lines[0] + " · " + summary
+    count, error = -1, ""
+    path = CACHE_DIR / "status.json"
+    try:
+        updates = json.loads(path.read_text())
+        if updates.get("alt") == "error":
+            error = updates.get("tooltip", "更新状态不可用")
+        elif time.time() - path.stat().st_mtime > 7200:
+            error = "更新状态已过期，请刷新"
+        elif Path("/var/log/pacman.log").stat().st_mtime > path.stat().st_mtime:
+            error = "安装记录已变化，请刷新"
+        else:
+            count = int(updates.get("text") or 0)
+    except (OSError, ValueError, TypeError):
+        error = "尚未检查更新"
+    print(json.dumps({"schemaVersion": 1, "ok": True, "powerSummary": summary,
+                      "updateCount": count, "updatesError": error}, ensure_ascii=False))
+
+
+def maintenance():
+    choices = {"检查更新": "list", "更新系统（先创建快照）": "update",
+               "创建 root / home 快照": "snapshot", "刷新更新状态": "refresh"}
+    selected = subprocess.run(
+        ["fuzzel", "--dmenu", "--prompt=HoloArch：", "--lines=4"],
+        input="\n".join(choices), text=True, capture_output=True,
+    )
+    action = choices.get(selected.stdout.strip())
+    if action:
+        subprocess.Popen(["kitty", "--hold", "--title", "HoloArch", str(BIN_DIR / "holoarch"), action], start_new_session=True)
+
+
+def power_menu():
+    items = ["选择电源档位", "切换显卡（可能需要重启）", "Firefox 显卡", "查看详细状态"]
+    selected = subprocess.run(["fuzzel", "--dmenu", "--prompt=电源与显卡：", "--lines=4"],
+                              input="\n".join(items), text=True, capture_output=True)
+    choice = selected.stdout.strip()
+    helper = str(BIN_DIR / "holo-power-mode")
+    if choice == items[0]:
+        subprocess.run([helper, "menu"], check=True)
+    elif choice in items[1:3]:
+        gpu = choice == items[1]
+        choices = {"混合显卡（支持外接屏）": "hybrid", "独显模式（可能需要重启）": "discrete"} if gpu else {"集显": "integrated", "独显": "discrete"}
+        selected = subprocess.run(["fuzzel", "--dmenu", "--prompt=显卡：", "--lines=2"],
+                                  input="\n".join(choices), text=True, capture_output=True)
+        target = choices.get(selected.stdout.strip())
+        if target:
+            subprocess.Popen(["kitty", "--hold", "--title", "电源与显卡", helper,
+                              "set-gpu" if gpu else "set-firefox", target], start_new_session=True)
+    elif choice == items[3]:
+        subprocess.Popen(["kitty", "--hold", "--title", "电源与显卡", helper, "info"], start_new_session=True)
+
+
+def toggle_bar():
+    path = HOME_DIR / ".config/clavis/config.json"
+    config = json.loads(path.read_text())
+    bar = config.setdefault("bar", {})
+    bar["enabled"] = not bar.get("enabled", True)
+    import tempfile
+    with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=path.parent, delete=False) as stream:
+        temp_path = Path(stream.name)
+        try:
+            json.dump(config, stream, ensure_ascii=False, indent=2)
+            stream.write("\n")
+            stream.flush()
+            os.fsync(stream.fileno())
+        except Exception:
+            temp_path.unlink(missing_ok=True)
+            raise
+    try:
+        os.replace(temp_path, path)
+    finally:
+        temp_path.unlink(missing_ok=True)
+
+
+def main():
+    action = sys.argv[1] if len(sys.argv) == 2 else ""
+    try:
+        if action == "status":
+            status()
+        elif action == "maintenance":
+            maintenance()
+        elif action == "power":
+            power_menu()
+        elif action == "toggle-bar":
+            toggle_bar()
+        elif action == "power-info":
+            os.execvp("kitty", ["kitty", "--hold", "--title", "电源与 GPU", str(BIN_DIR / "holo-power-mode"), "info"])
+        else:
+            print("usage: holoarch-desktop {status|maintenance|power|power-info|toggle-bar}", file=sys.stderr)
+            return 2
+    except (OSError, ValueError, KeyError, subprocess.SubprocessError) as exc:
+        print(json.dumps({"schemaVersion": 1, "ok": False, "error": str(exc)}, ensure_ascii=False))
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

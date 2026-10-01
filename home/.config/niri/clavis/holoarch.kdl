@@ -1,0 +1,16 @@
+// HoloArch bindings preserve the existing window movement shortcuts.
+binds {
+    Mod+Ctrl+Q hotkey-overlay-title="快捷设置 Quick settings" { spawn "qs" "-c" "clavis" "ipc" "call" "sidebar" "toggle" "quicksettings"; }
+    Mod+Ctrl+N hotkey-overlay-title="信息侧栏 Dashboard" { spawn "qs" "-c" "clavis" "ipc" "call" "sidebar" "toggle" "dashboard"; }
+    Mod+Ctrl+Comma hotkey-overlay-title="桌面设置 Settings" { spawn "qs" "-c" "clavis" "ipc" "call" "control-center" "toggle" "general"; }
+    Mod+Shift+T hotkey-overlay-title="灵动岛工具 Tools" { spawn "qs" "-c" "clavis" "ipc" "call" "keystone" "tools"; }
+}
+
+layer-rule {
+    match namespace="^clavis-overview-wallpaper$"
+    place-within-backdrop true
+}
+
+layout {
+    background-color "transparent"
+}

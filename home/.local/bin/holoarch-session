@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+readonly REPO_DIR="$HOME/Projects/HoloArch"
+readonly NIRI_DIR="$HOME/.config/niri"
+readonly STATE_DIR="$HOME/.local/state/holoarch"
+export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin"
+
+stop_unit_if_running() {
+    if systemctl --user is-active --quiet "$1"; then
+        systemctl --user stop "$1"
+    fi
+}
+
+run_legacy() {
+    local name=$1
+    shift
+    if ! systemctl --user is-active --quiet "holoarch-legacy-$name.service"; then
+        systemd-run --user --collect --unit="holoarch-legacy-$name" "$@"
+    fi
+}
+
+legacy() {
+    stop_unit_if_running clavis-shell.service
+    stop_unit_if_running clavis-clipboard.service
+    stop_unit_if_running holoarch-updates.timer
+    systemctl --user disable clavis-shell.service clavis-clipboard.service holoarch-updates.timer
+    run_legacy wallpaper /usr/bin/awww-daemon
+    run_legacy overview /usr/bin/awww-daemon -n overview
+    run_legacy waybar /usr/bin/waybar
+    run_legacy mako /usr/bin/mako
+    run_legacy clipboard /usr/bin/wl-paste --watch cliphist store
+    run_legacy swayosd /usr/bin/swayosd-server
+    run_legacy nightlight /usr/bin/wlsunset -l 36.5 -L 128.0 -t 5000 -T 6500 -d 1800
+    run_legacy wallpaper-sync "$NIRI_DIR/scripts/awww-sync-outputs"
+    waypaper --restore
+}
+
+clavis() {
+    for name in waybar mako clipboard swayosd nightlight wallpaper-sync; do
+        stop_unit_if_running "holoarch-legacy-$name.service"
+    done
+    for process_name in waybar mako swayosd-server wlsunset; do
+        pkill -TERM -x "$process_name" || true
+    done
+    pkill -TERM -f '^wl-paste --watch cliphist store$' || true
+    pkill -TERM -f "^bash $HOME/.config/niri/scripts/awww-sync-outputs$" || true
+    systemctl --user daemon-reload || return 1
+    systemctl --user start clavis-shell.service clavis-clipboard.service || return 1
+    local loaded=false
+    for ((attempt = 0; attempt < 40; attempt++)); do
+        if qs -c clavis ipc show >/dev/null 2>&1; then
+            loaded=true
+            break
+        fi
+        sleep 0.25
+    done
+    if [[ $loaded != true ]]; then
+        journalctl --user -u clavis-shell.service -n 30 --no-pager >&2
+        return 1
+    fi
+    awww kill || true
+    awww kill -n overview || true
+    stop_unit_if_running holoarch-legacy-wallpaper.service
+    stop_unit_if_running holoarch-legacy-overview.service
+    systemctl --user enable clavis-shell.service clavis-clipboard.service holoarch-updates.timer || return 1
+    systemctl --user start holoarch-updates.timer || return 1
+}
+
+mode=${1:-status}
+if [[ $mode == status ]]; then
+    systemctl --user status clavis-shell.service clavis-clipboard.service holoarch-updates.timer --no-pager
+    exit
+fi
+if [[ $mode != clavis && $mode != legacy ]]; then
+    printf '用法：holoarch-session {clavis|legacy|status}\n' >&2
+    exit 2
+fi
+mkdir -p "$STATE_DIR"
+backup_dir="$STATE_DIR/session-switch-$(date +%Y%m%d-%H%M%S)"
+mkdir -m700 "$backup_dir"
+cp "$NIRI_DIR/config.kdl" "$NIRI_DIR/binds.kdl" "$backup_dir/"
+candidate_dir=$(mktemp -d "$STATE_DIR/niri-session.XXXXXX")
+trap 'rm -rf -- "$candidate_dir"' EXIT
+cp -a "$NIRI_DIR/." "$candidate_dir/"
+if [[ $mode == clavis ]]; then
+    source_dir="$REPO_DIR/home/.config/niri"
+    mkdir -p "$candidate_dir/clavis"
+    cp "$source_dir/clavis/holoarch.kdl" "$candidate_dir/clavis/"
+else
+    source_dir="$REPO_DIR/profiles/legacy/niri"
+fi
+cp "$source_dir/config.kdl" "$source_dir/binds.kdl" "$candidate_dir/"
+niri validate -c "$candidate_dir/config.kdl"
+if [[ $mode == clavis ]]; then
+    mkdir -p "$NIRI_DIR/clavis"
+    cp "$candidate_dir/clavis/holoarch.kdl" "$NIRI_DIR/clavis/"
+    cp "$candidate_dir/config.kdl" "$candidate_dir/binds.kdl" "$NIRI_DIR/"
+    if ! clavis; then
+        printf 'Clavis 未加载，恢复旧桌面。日志见 holoarch-shell log。\n' >&2
+        cp "$REPO_DIR/profiles/legacy/niri/config.kdl" "$REPO_DIR/profiles/legacy/niri/binds.kdl" "$NIRI_DIR/"
+        legacy
+        exit 1
+    fi
+else
+    cp "$candidate_dir/config.kdl" "$candidate_dir/binds.kdl" "$NIRI_DIR/"
+    legacy
+fi
+printf '%s\n' "$mode" > "$STATE_DIR/desktop-profile"
+printf '已切换：%s；切换前配置：%s\n' "$mode" "$backup_dir"

@@ -1,0 +1,17 @@
+[Unit]
+Description=HoloArch Clavis clipboard watcher
+Requisite=niri.service
+PartOf=niri.service
+After=niri.service
+StartLimitIntervalSec=30
+StartLimitBurst=5
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/key clipboard watch
+Restart=on-failure
+RestartSec=2
+TimeoutStopSec=5
+
+[Install]
+WantedBy=niri.service

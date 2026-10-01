@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin"
+unset PYTHONPATH PYTHONHOME CONDA_PREFIX CONDA_DEFAULT_ENV QT_PLUGIN_PATH
+exec "$HOME/.local/share/holoarch/key-current/venv/bin/key" "$@"

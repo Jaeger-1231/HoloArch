@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-01",
+  "baselineBackupCommit": "a75e0fedc6eeea581d78a3e84703aa828e089c1d",
+  "clavisUpstreamCommit": "91cdecbe08831acdcff44d350e09232efe7164ed",
+  "keyUpstreamCommit": "f91a7aed7da1d3b37d1a722a7a85493053378755",
+  "keyVersion": "2026.9.25",
+  "packages": {
+    "quickshell": "0.3.1-1",
+    "qt6-tools": "6.11.2-1",
+    "qt6-lottie": "6.11.2-1",
+    "qt6-location": "6.11.2-1",
+    "qt6-positioning": "6.11.2-1",
+    "maplibre-native-qt": "3.0.0-2",
+    "ttf-material-symbols-variable": "2.874-1",
+    "fd": "10.5.0-3",
+    "gpu-screen-recorder": "6.1.3-1",
+    "rclone": "1.75.1-1",
+    "libqalculate": "5.12.0-1",
+    "python-evdev": "2.0.0-1",
+    "python-pyudev": "0.24.4-1",
+    "meson": "1.12.1-1",
+    "autoconf-archive": "1:2024.10.16-4",
+    "libcava": "1.0.0-1",
+    "qt6-m3shapes-git": "r50.8a6fe89-1"
+  },
+  "aur": {
+    "libcava": {
+      "recipeOriginCommit": "39403443c8208f5d9adaaed7c8347c439efe52cf",
+      "artifact": "libcava-1.0.0-1-x86_64.pkg.tar.zst",
+      "artifactSha256": "c0266693ffc8011c791149a836511f3b9d7799ba1607f9fc1c820b038191538d"
+    },
+    "qt6-m3shapes-git": {
+      "recipeOriginCommit": "f4184f7e028ca685d9739a66725645830327b532",
+      "artifact": "qt6-m3shapes-git-r50.8a6fe89-1-x86_64.pkg.tar.zst",
+      "artifactSha256": "9cf155b57b0c24878ef4b33cc19b9586af44300f59fdcd07e4376a212f6803be",
+      "pinnedSourceCommit": "8a6fe8961749887d677700b6508e0c9249968b7e"
+    }
+  },
+  "checks": {
+    "clavisCtestPassed": 27,
+    "keyCtestPassed": 2,
+    "qmlAdvisoryWarnings": 42,
+    "niriConfig": "valid",
+    "dualOutputs": [
+      "HDMI-A-1",
+      "eDP-1"
+    ],
+    "keyboardAuthorization": false,
+    "cpuEnergyAuthorization": false,
+    "nativeLockUnlock": "manual acceptance pending",
+    "physicalHotplug": "manual acceptance pending",
+    "actualRecordAudio": "manual acceptance pending"
+  },
+  "preMigrationSnapshots": {
+    "root": 1119,
+    "home": 915
+  },
+  "runtimePaths": {
+    "shell": "~/.local/share/holoarch/current",
+    "key": "~/.local/share/holoarch/key-current",
+    "userConfig": "~/.config/clavis",
+    "verification": "~/.local/state/holoarch/verification"
+  },
+  "shellcheck": {
+    "version": "0.11.0",
+    "source": "https://github.com/koalaman/shellcheck/releases/download/v0.11.0/shellcheck-v0.11.0.linux.x86_64.tar.xz",
+    "archiveSha256": "8c3be12b05d5c177a04c29e3c78ce89ac86f1595681cab149b65b97c4e227198",
+    "deployment": "~/.local/bin/shellcheck"
+  }
+}

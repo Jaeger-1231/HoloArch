@@ -1,10 +1,12 @@
 # 桌面恢复
 
+当前分支已接入 Clavis。迁移前完整 Git 配置保留在 `pre-clavis-20261001` 标签；`inventory/backup-manifest.json` 记录的是初始基线。当前 `home/` 是适配后的配置，用户服务也包含 Clavis 和更新服务。仅恢复旧桌面可运行 `holoarch-session legacy`，详见 [部署与维护](clavis-deployment.md)。
+
 ## 恢复前检查
 
 本备份来自 `/home/zhuoran` 的 Arch / niri 配置。部分路径写了本机用户名；在其他用户账号上使用时，先检查绝对路径、显示器和 GPU 接口。
 
-`home/` 保存了筛选后的桌面配置，`system/` 保存了本机电源控制文件。用户服务只收录 niri 的 EGL drop-in；软件包提供的 PipeWire 服务和与桌面无关的技能同步服务没有复制进来。输入法用户词库和个人文件保存在本机 home 快照中。
+初始标签的 `home/` 保存了筛选后的桌面配置，`system/` 保存了本机电源控制文件。初始标签的用户服务只收录 niri 的 EGL drop-in；软件包提供的 PipeWire 服务和与桌面无关的技能同步服务没有复制进来。输入法用户词库和个人文件保存在本机 home 快照中。
 
 ## Git 配置恢复
 

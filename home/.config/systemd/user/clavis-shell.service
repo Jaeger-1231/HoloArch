@@ -1,0 +1,22 @@
+[Unit]
+Description=HoloArch Clavis desktop shell
+Requisite=niri.service
+PartOf=niri.service
+After=niri.service
+StartLimitIntervalSec=30
+StartLimitBurst=5
+
+[Service]
+Type=simple
+Environment="PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="QT_QPA_PLATFORM=wayland"
+Environment="QML_IMPORT_PATH=%h/.local/share/holoarch/current/lib/qt6/qml"
+Environment="MALLOC_CONF=thp:never,narenas:4,dirty_decay_ms:3000"
+UnsetEnvironment=__EGL_VENDOR_LIBRARY_DIRS QT_PLUGIN_PATH PYTHONPATH PYTHONHOME QML2_IMPORT_PATH CONDA_PREFIX CONDA_DEFAULT_ENV
+ExecStart=%h/.local/bin/key shell --foreground --no-duplicate
+Restart=on-failure
+RestartSec=2
+TimeoutStopSec=10
+
+[Install]
+WantedBy=niri.service

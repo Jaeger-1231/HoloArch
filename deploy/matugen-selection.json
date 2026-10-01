@@ -1,0 +1,21 @@
+{
+  "btop": false,
+  "cava": false,
+  "kitty": false,
+  "yazi": false,
+  "holo-pywalfox": true,
+  "holo-fuzzel": true,
+  "holo-kitty": true,
+  "holo-fcitx5": true,
+  "holo-btop": true,
+  "holo-cava": true,
+  "holo-starship": true,
+  "holo-yazi": true,
+  "holo-gtk3": true,
+  "holo-gtk4": true,
+  "holo-niri": true,
+  "holo-gtk-folder": true,
+  "holo-fastfetch": true,
+  "holo-hyprlock": true,
+  "holo-obs": true
+}

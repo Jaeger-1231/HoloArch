@@ -1,0 +1,65 @@
+[templates.holo-pywalfox]
+input_path = "~/.config/matugen/templates/pywalfox-colors.json"
+output_path = "~/.cache/wal/colors.json"
+post_hook = "pywalfox update &"
+
+[templates.holo-fuzzel]
+input_path = "~/.config/matugen/templates/fuzzel.ini"
+output_path = "~/.config/fuzzel/colors.ini"
+
+[templates.holo-kitty]
+input_path = "~/.config/matugen/templates/kitty-colors.conf"
+output_path = "~/.config/kitty/themes/matugen.conf"
+post_hook = "kitty +kitten themes --reload-in=all matugen &"
+
+[templates.holo-fcitx5]
+input_path = "~/.config/matugen/templates/fcitx5-theme.conf"
+output_path = "~/.local/share/fcitx5/themes/Matugen/theme.conf"
+post_hook = "fcitx5-remote -r"
+
+[templates.holo-btop]
+input_path = "~/.config/matugen/templates/btop.theme"
+output_path = "~/.config/btop/themes/matugen.theme"
+post_hook = "pkill -USR2 -x btop >/dev/null 2>&1 || true"
+
+[templates.holo-cava]
+input_path = "~/.config/matugen/templates/cava-colors.ini"
+output_path = "~/.config/cava/themes/your-theme"
+post_hook = "pkill -USR1 -x cava >/dev/null 2>&1 || true"
+
+[templates.holo-starship]
+input_path = "~/.config/matugen/templates/starship-colors.toml"
+output_path = "~/.config/starship.toml"
+
+[templates.holo-yazi]
+input_path = "~/.config/matugen/templates/yazi-theme.toml"
+output_path = "~/.config/yazi/theme.toml"
+
+[templates.holo-gtk3]
+input_path = "~/.config/matugen/templates/gtk-colors.css"
+output_path = "~/.config/gtk-3.0/colors.css"
+
+[templates.holo-gtk4]
+input_path = "~/.config/matugen/templates/gtk-colors.css"
+output_path = "~/.config/gtk-4.0/colors.css"
+
+[templates.holo-niri]
+input_path = "~/.config/matugen/templates/niri-colors.kdl"
+output_path = "~/.config/niri/colors.kdl"
+
+[templates.holo-gtk-folder]
+input_path = "~/.config/matugen/templates/gtk-folder/recolor.sh"
+output_path = "~/.cache/matugen/recoloricons.sh"
+post_hook = "bash ~/.cache/matugen/recoloricons.sh &"
+
+[templates.holo-fastfetch]
+input_path = "~/.config/matugen/templates/fastfetch-config.jsonc"
+output_path = "~/.config/fastfetch/config.jsonc"
+
+[templates.holo-hyprlock]
+input_path = "~/.config/matugen/templates/hyprland-colors.conf"
+output_path = "~/.cache/matugen/hypr/colors.conf"
+
+[templates.holo-obs]
+input_path = "~/.config/matugen/templates/obs-matugen.obt"
+output_path = "~/.config/obs-studio/themes/matugen.obt"

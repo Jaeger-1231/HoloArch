@@ -430,8 +430,39 @@ WidgetPanel {
             }
 
             SettingsSection {
-                pullExpansion: sidebarScroll.detailExpansion
+                Layout.fillWidth: true
                 Layout.topMargin: sidebarScroll.gapFor(2, 1)
+                title: "HoloArch"
+                iconName: "build"
+
+                SettingsRow {
+                    Layout.fillWidth: true
+                    title: qsTr("Power and GPU")
+                    supportingText: HoloArchService.powerSummary
+                    iconName: "bolt"
+                    interactive: true
+                    onClicked: {
+                        WidgetState.closeAllPopups();
+                        HoloArchService.openPowerMenu();
+                    }
+                }
+
+                SettingsRow {
+                    Layout.fillWidth: true
+                    title: qsTr("System maintenance")
+                    supportingText: HoloArchService.updateSummary
+                    iconName: "system_update"
+                    interactive: true
+                    onClicked: {
+                        WidgetState.closeAllPopups();
+                        HoloArchService.openMaintenanceMenu();
+                    }
+                }
+            }
+
+            SettingsSection {
+                pullExpansion: sidebarScroll.detailExpansion
+                Layout.topMargin: sidebarScroll.gapFor(3, 1)
 
                 Layout.fillWidth: true
                 title: qsTr("Device settings")

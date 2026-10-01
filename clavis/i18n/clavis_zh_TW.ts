@@ -9502,6 +9502,14 @@ Right-click to change shape; scroll to reorder</source>
         <source>Idle management</source>
         <translation>空閒管理</translation>
     </message>
+    <message>
+        <source>Power and GPU</source>
+        <translation>電源與顯示卡</translation>
+    </message>
+    <message>
+        <source>System maintenance</source>
+        <translation>系統維護</translation>
+    </message>
 </context>
 <context>
     <name>QuickSliders</name>
@@ -14264,6 +14272,17 @@ Windows: </source>
         <location filename="../Modules/ControlCenter/ZenPaletteEditor.qml" line="540"/>
         <source>Grain: %1%</source>
         <translation>顆粒：%1%</translation>
+    </message>
+</context>
+<context>
+    <name>HoloArchService</name>
+    <message>
+        <source>%1 updates</source>
+        <translation>%1 項更新</translation>
+    </message>
+    <message>
+        <source>Status unavailable</source>
+        <translation>狀態無法取得</translation>
     </message>
 </context>
 </TS>

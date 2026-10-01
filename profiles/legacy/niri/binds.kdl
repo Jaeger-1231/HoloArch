@@ -13,32 +13,32 @@ binds {
     // shows a list of important hotkeys.
 
     // 显示快捷键教程
-    Mod+Shift+Slash hotkey-overlay-title="快捷键教程 Keybind tutorial" { spawn "qs" "-c" "clavis" "ipc" "call" "shortcut-map" "toggle"; }
+    Mod+Shift+Slash hotkey-overlay-title="快捷键教程 Keybind tutorial" { spawn "~/.config/niri/scripts/niri-binds"; }
 
     // alt+tab切换窗口
     Alt+Tab hotkey-overlay-title="快速跳转窗口 Quick window switch menu" {spawn "~/.config/niri/scripts/niri-quick-switch-fuzzel.py";}
-    Mod+Alt+W hotkey-overlay-title="切换壁纸 Change wallpaper" { spawn "qs" "-c" "clavis" "ipc" "call" "spotlight" "openMode" "wallpapers"; }
-    Mod+Alt+M hotkey-overlay-title="切换颜色策略 Change color strategy" { spawn "qs" "-c" "clavis" "ipc" "call" "control-center" "open" "theme"; }
-    Mod+Alt+T hotkey-overlay-title="切换颜色策略 Change color strategy" { spawn "qs" "-c" "clavis" "ipc" "call" "control-center" "open" "theme"; }
-    Mod+F10 hotkey-overlay-title="随机切换壁纸 Random wallpaper" { spawn "qs" "-c" "clavis" "ipc" "call" "wallpaper" "random"; }
+    Mod+Alt+W hotkey-overlay-title="切换壁纸 Change wallpaper" {spawn "waypaper";}
+    Mod+Alt+M hotkey-overlay-title="切换颜色策略 Change color strategy" {spawn "~/.config/scripts/matugen-select-type.sh";}
+    Mod+Alt+T hotkey-overlay-title="切换颜色策略 Change color strategy" {spawn "~/.config/scripts/matugen-select-type.sh";}
+    Mod+F10 hotkey-overlay-title="随机切换壁纸 Random wallpaper" {spawn "waypaper" "--random";}
     Mod+Shift+F10 hotkey-overlay-title="随机下载动漫壁纸 Random download anime wallpaper" {spawn "~/.config/scripts/random-anime-wallpaper.sh";}
     Mod+F1 hotkey-overlay-title="开关输入法 Toggle fcitx" {spawn-sh "pkill fcitx5 || fcitx5 -d";}
-    Mod+F2 hotkey-overlay-title=null  { spawn "~/.local/bin/holoarch-desktop" "maintenance"; }
-    Mod+F3  hotkey-overlay-title=null { spawn "~/.local/bin/holoarch-desktop" "power"; }
+    Mod+F2 hotkey-overlay-title=null  {spawn-sh "pkill cava || true && pkill waybar || true && waybar -c $HOME/.config/waybar/config.jsonc -s $HOME/.config/waybar/style.css ";}
+    Mod+F3  hotkey-overlay-title=null {spawn-sh "pkill cava || true && pkill waybar || true &&  waybar -c $HOME/.config/waybar-niri-Win11Like/config.jsonc -s $HOME/.config/waybar-niri-Win11Like/style.css ";}
     // 这一行是用waybar自己支持的信号功能隐藏waybar，但进程没有退出，资源占用依旧有
-    Mod+Shift+F4 hotkey-overlay-title="隐藏任务栏 Hide bar" { spawn "~/.local/bin/holoarch-desktop" "toggle-bar"; }
+    Mod+Shift+F4 hotkey-overlay-title="隐藏任务栏 Hide bar" {spawn-sh "killall -SIGUSR1 waybar";}
     // 这一行是关闭waybar进程，释放资源占用。在意资源占用的时候使用。
-    Mod+F4 hotkey-overlay-title="开关任务栏 Toggle bar" { spawn "~/.local/bin/holoarch-desktop" "toggle-bar"; }
+    Mod+F4 hotkey-overlay-title="开关任务栏 Toggle bar" {spawn-sh "pkill waybar && pkill cava || waybar ";}
     Mod+F5 hotkey-overlay-title="创建系统快照 Create snapshot" {spawn "~/.local/bin/holoarch" "snapshot";}
     Mod+F12 hotkey-overlay-title="截取所有显示器 Screenshot All Monitor"  {spawn-sh "grim - | wl-copy & pw-play /usr/share/sounds/freedesktop/stereo/camera-shutter.oga ";}
     // 这是什么！
     Mod+Ctrl+Shift+Alt+B hotkey-overlay-title="播放Bad Apple Play Bad Apple" { spawn "bad-apple" ;}
 
     // 以下功能需要安装nirius并启动niriusd
-    Mod+Ctrl+G hotkey-overlay-title="切换工作区时自动跟随 Follow when switch workspaces" {spawn "nirius" "toggle-follow-mode" ;} 
-    Mod+Shift+Q hotkey-overlay-title="快速聚焦到QQ Quick focus QQ" {spawn "nirius" "focus" "--app-id" "QQ" ;} 
-    Mod+Shift+O hotkey-overlay-title="快速聚焦到OpenCode Quick focus OpenCode" {spawn "nirius" "focus" "--app-id" "opencode" ;} 
-    Mod+Shift+W hotkey-overlay-title="快速聚焦到微信 Quick focus Wechat" {spawn "nirius" "focus" "--app-id" "wechat" ;} 
+    Mod+Ctrl+G hotkey-overlay-title="切换工作区时自动跟随 Follow when switch workspaces" {spawn "nirius" "toggle-follow-mode" ;}
+    Mod+Shift+Q hotkey-overlay-title="快速聚焦到QQ Quick focus QQ" {spawn "nirius" "focus" "--app-id" "QQ" ;}
+    Mod+Shift+O hotkey-overlay-title="快速聚焦到OpenCode Quick focus OpenCode" {spawn "nirius" "focus" "--app-id" "opencode" ;}
+    Mod+Shift+W hotkey-overlay-title="快速聚焦到微信 Quick focus Wechat" {spawn "nirius" "focus" "--app-id" "wechat" ;}
 
     // niri-sidebar扩展相关
     // 警告：这是实验性功能
@@ -52,15 +52,15 @@ binds {
     // 重新排列侧边栏中的窗口（侧边栏中的窗口本质是一个浮动窗口，你有时候可能会把它移动到别的地方
     // 例如 ctrl+c居中。此时按下此键可以重新排列）
     Mod+Alt+R hotkey-overlay-title="重置侧边栏 Reorder Sidebar"  { spawn "niri-sidebar" "reorder"; }
-    
+
 
     // 临时开一个浮动终端
     Mod+Slash hotkey-overlay-title="临时终端 Quick Terminal" {spawn "kitty" "--single-instance" "--class" "quickterminal";}
     //打开浏览器
-    Mod+B hotkey-overlay-title="浏览器 Browser" { spawn "/home/zhuoran/.local/bin/firefox"; }        
+    Mod+B hotkey-overlay-title="浏览器 Browser" { spawn "/home/zhuoran/.local/bin/firefox"; }
     //opencode ai助手
-    Mod+Alt+O hotkey-overlay-title="AI助手 opencode agent" { spawn "kitty" "--class" "opencode" "-e" "opencode"; }        
-    
+    Mod+Alt+O hotkey-overlay-title="AI助手 opencode agent" { spawn "kitty" "--class" "opencode" "-e" "opencode"; }
+
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="共享终端 Terminal" { spawn "kitty" "--single-instance"; }
@@ -69,12 +69,12 @@ binds {
     Mod+E hotkey-overlay-title="文档管理器 Filemanager" { spawn-sh "thunar || env GSK_RENDERER=gl nautilus --new-window"; }
     // 另一个打开nautilus的快捷键，主要是为了在同时安装thunar和nautilus的情况下打开naultilus
     Mod+Alt+E hotkey-overlay-title=null {spawn "env" "GSK_RENDERER=gl" "nautilus" "--new-window";}
-    Mod+Z hotkey-overlay-title="程序菜单 Applauncher" { spawn "qs" "-c" "clavis" "ipc" "call" "spotlight" "openMode" "apps"; }
+    Mod+Z hotkey-overlay-title="程序菜单 Applauncher" { spawn "fuzzel"; }
     // 锁屏
-    Mod+Alt+L hotkey-overlay-title="锁屏 Lock screen" { spawn-sh "hyprlock -c ~/.config/niri/hyprlock.conf"; } 
+    Mod+Alt+L hotkey-overlay-title="锁屏 Lock screen" { spawn-sh "hyprlock -c ~/.config/niri/hyprlock.conf"; }
     Mod+P hotkey-overlay-title="提取窗口信息 Pick information" { spawn "~/.config/niri/scripts/niri-pick" "focus"; }
     //Mod+Alt+V  hotkey-overlay-title="剪贴板 Clipboard" {spawn-sh "copyq toggle || ~/.local/bin/clipse-gui || kitty --class clipse --single-instance -e clipse";}
-    Mod+Alt+V hotkey-overlay-title="剪贴板 Clipboard" { spawn "qs" "-c" "clavis" "ipc" "call" "spotlight" "openMode" "clipboard"; }
+    Mod+Alt+V hotkey-overlay-title="剪贴板 Clipboard" {spawn "~/.local/bin/holoarch-clipboard";}
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
@@ -83,9 +83,9 @@ binds {
     // The allow-when-locked=true property makes them work even when the session is locked.
     // Using spawn-sh allows to pass multiple arguments together with the command.
     // 调节音量
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1.0" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
-    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "swayosd-client --output-volume +5||wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "swayosd-client --output-volume -5||wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "swayosd-client --output-volume mute-toggle||wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
     // Example brightness key mappings for brightnessctl.
@@ -116,7 +116,7 @@ binds {
     // super+方向键就是切换聚焦，再加上ctrl就是移动窗口
     // super+a/d 比较特殊，不是切换聚焦而是左右合并colume（相当于左右移动窗口）
     // super+shift就是跨显示器，加上ctrl就是移动窗口
-    
+
     // 切换聚焦
     // super+方向键
     Mod+Left hotkey-overlay-title=null { focus-column-left; }
@@ -143,7 +143,7 @@ binds {
     // super+ctrl+a/d 向左/右移动列
     Mod+Ctrl+A  { move-column-left; }
     Mod+Ctrl+D { move-column-right; }
-    
+
     // Alternative commands that move across workspaces when reaching
     // the first or last window in a column.
     // Mod+J     { focus-window-or-workspace-down; }
@@ -189,7 +189,7 @@ binds {
     // ...
 
     // And you can also move a whole workspace to another monitor:
-    
+
     //移动整个工作区
     // mod+shift跨显示器，alt代表移动整个工作区，再加上三组方向键
     Mod+Shift+Alt+W  { move-workspace-to-monitor-up; }
@@ -206,7 +206,7 @@ binds {
     Mod+Shift+Alt+Down  { move-workspace-to-monitor-down; }
     Mod+Shift+Alt+Right  { move-workspace-to-monitor-right; }
     Mod+Shift+Alt+Left  { move-workspace-to-monitor-left; }
-    
+
     // 上下切换工作区
     Mod+Page_Down hotkey-overlay-title=null     { focus-workspace-down; }
     Mod+Page_Up hotkey-overlay-title=null       { focus-workspace-up; }
@@ -291,7 +291,7 @@ binds {
 
     // Switches focus between the current and the previous workspace.
     //Mod+Tab { focus-workspace-previous; }
-    
+
     // The following binds move the focused window in and out of a column.
     // If the window is alone, they will consume it into the nearby column to the side.
     // If the window is already in a column, they will expel it out.
@@ -321,7 +321,7 @@ binds {
     // mod+鼠标侧键 上下切换聚焦
     Mod+MouseForward { focus-window-up; }
     Mod+MouseBack    { focus-window-down; }
-    
+
     // 按照预设切换窗口宽度
     Mod+R  hotkey-overlay-title="按预设切换宽度 Switch width " { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
@@ -378,7 +378,7 @@ binds {
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    
+
 
     // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have

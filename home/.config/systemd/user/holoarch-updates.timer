@@ -1,0 +1,12 @@
+[Unit]
+Description=Refresh HoloArch desktop update status
+PartOf=niri.service
+
+[Timer]
+OnActiveSec=2min
+OnUnitActiveSec=1h
+RandomizedDelaySec=30s
+Unit=holoarch-updates.service
+
+[Install]
+WantedBy=niri.service
