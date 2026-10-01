@@ -7,11 +7,6 @@ post_hook = "pywalfox update &"
 input_path = "~/.config/matugen/templates/fuzzel.ini"
 output_path = "~/.config/fuzzel/colors.ini"
 
-[templates.holo-kitty]
-input_path = "~/.config/matugen/templates/kitty-colors.conf"
-output_path = "~/.config/kitty/themes/matugen.conf"
-post_hook = "kitty +kitten themes --reload-in=all matugen &"
-
 [templates.holo-fcitx5]
 input_path = "~/.config/matugen/templates/fcitx5-theme.conf"
 output_path = "~/.local/share/fcitx5/themes/Matugen/theme.conf"

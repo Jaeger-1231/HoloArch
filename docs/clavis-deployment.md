@@ -26,7 +26,7 @@ Shell 读取 `~/.local/share/holoarch/current` 指向的发布。`~/.config/quic
 | 剪贴板 | key-cli 捕获进入已有 cliphist 数据库；重复捕获停止，历史未清空 |
 | 壁纸 | Clavis Quickshell 渲染，沿用原照片和文件夹；旧 awww/overview 停止 |
 | Overview | 匹配 clavis-overview-wallpaper，layout 透明背景 |
-| 配色 | Clavis 生成内部色板和 15 个个人模板，关闭内置 btop/cava/kitty/yazi，避免重复目标 |
+| 配色 | Clavis 生成内部色板，启用作者的 Kitty 模板和 14 个个人模板；内置 btop/cava/yazi 关闭 |
 | 色温 | Clavis 沿用 5000K/6500K、36.5/128.0、30 分钟过渡；wlsunset 停止 |
 | 锁屏 | Mod+Alt+L 与合盖仍使用 hyprlock；自动闲置策略关闭，保持原行为 |
 | 窗口管理 | 保留窗口操作键及 niri-sidebar 窗口收纳 |
@@ -34,6 +34,27 @@ Shell 读取 `~/.local/share/holoarch/current` 指向的发布。`~/.config/quic
 旧 Waybar 脚本路径作为包装入口调用独立后端，旧桌面与新桌面使用同一套维护逻辑。
 
 外部模板包括 Firefox/pywalfox、fuzzel、Kitty、Fcitx5、btop、cava、Starship、Yazi、GTK3/4、niri、GTK 图标、Fastfetch、hyprlock、OBS。Fcitx 改为配置重载。旧 Waybar/mako/swayosd 模板不启用；VS Code 注入模板保留在原备份，可自行选择接入。
+
+## 终端
+
+Kitty 使用作者原有的 Matugen 模板，生成 `~/.config/kitty/themes/Matugen.conf` 后复制到 `current-theme.conf` 并重载。已关闭旧 `holo-kitty` 入口；kitty.conf 只引用一份 current-theme.conf。保留 JetBrains Maple Mono 13.5、80% 不透明度及本机既有的 Kitty 防闪烁规则，调整为 8 像素内边距和细竖线光标。
+
+Starship 布局按用户提供的作者终端截图适配：第一行左侧为主目录/文件夹图标，右侧为已安装工具图标、当前环境/Git 信息、目录及 24 小时秒钟时钟；第二行显示输入提示。颜色直接使用作者 Kitty 模板的 ANSI 色号。工具图标检查实际可用的 Python、Git、Node、C/C++；环境与 Git 信息按当前上下文显示。quickshell 主仓库不含完整 Starship 布局，此处为用户已验收的截图适配。作者另有 [clavis-fish-theme](https://github.com/StatIndet/clavis-fish-theme) 提示符项目，可作为后续选择。
+
+Fish 启动配置已收录到 `home/.config/fish/`。Starship/zoxide 仅在交互 Shell 初始化。`conf.d/holoarch-terminal.fish` 在每个新的交互 Kitty 窗口显示一次 Fastfetch，嵌套 Shell 不重复，非交互脚本不显示。使用 `Win+T` 打开终端，`fastfetch` 或 `fa` 可手动再次显示；`Ctrl+L` 清屏后查看截图中的简洁提示符。
+
+Fastfetch 使用作者另一个仓库 [StatIndet/dotfiles 的原配置](https://github.com/StatIndet/dotfiles/blob/6947cdf70cddcf3d22532535ff5f47b5b434e170/fastfetch/config.jsonc)，保留系统/硬件两组边框、字段顺序和底部彩色圆点。原文件及固定提交保存在 `deploy/upstream/fastfetch/`。适配替换了作者主目录路径、Hyprland splash 命令和旧字段编号；数据来自这台电脑，包含两个显示器及两块 GPU。图片使用 Kitty 图形通道，只有宽度固定为 27 列，保持图片比例。颜色使用终端 ANSI 色板，跟随 Kitty 的 Matugen 配色。
+
+作者配置中的 `new_world.jpg` 未包含在所查的公开仓库中。按用户选择，`~/.config/fastfetch/logo` 作为符号链接指向本机现有壁纸，图片不上传。换图片或在恢复配置后重新指定图片：
+
+```bash
+ln -sfn -- /图片的完整路径 ~/.config/fastfetch/logo
+fastfetch
+```
+
+修改 Fastfetch 布局时编辑 `~/.config/matugen/templates/fastfetch-config.jsonc` 并同步到 `~/.config/fastfetch/config.jsonc`，避免下次调色覆盖。
+
+改提示符布局时编辑 `~/.config/matugen/templates/starship-colors.toml` 并同步 `~/.config/starship.toml`。终端改动前的完整本机归档位于 `~/.local/state/holoarch/backups/20261001-215045-pre-terminal/`。已验收提示符的 home Snapper **#920** 继续保留；包含最终 Fastfetch 的 home Snapper **#921**（`holoarch-terminal-ready-20261001-225905`）已创建并核对，无自动清理规则。最终 Git bundle 保存在 `~/.local/state/holoarch/backups/20261001-225905-terminal-ready/`；截图只保留本机。
 
 ## 验收与保留项
 

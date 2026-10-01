@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-01",
+  "packages": {
+    "kitty": "0.49.1-1",
+    "fish": "4.9.3-1",
+    "starship": "1.26.0-1",
+    "fastfetch": "2.68.1-1"
+  },
+  "kittyTemplateSource": "clavis/matugen/templates/kitty-colors.conf",
+  "kittyTemplateUpstreamCommit": "91cdecbe08831acdcff44d350e09232efe7164ed",
+  "kittyTemplateSha256": "549b994d3619c582265c37b4f097ea95673f29782bd0161c3939174f73217265",
+  "promptLayout": "Adapted from the user-provided author screenshot; the original full Starship configuration is absent from the adopted upstream revision.",
+  "promptColorSource": "Upstream Kitty ANSI slots",
+  "fastfetchAutomatic": true,
+  "fishUniversalVariablesPublished": false,
+  "localPreChangeBackup": "~/.local/state/holoarch/backups/20261001-215045-pre-terminal/",
+  "checks": {
+    "fishSyntax": "passed",
+    "tomlJsonParsing": "passed",
+    "matugenRegistry": "valid",
+    "upstreamKittyRender": "passed",
+    "realKittyFastfetch": "passed",
+    "referencePromptLayout": "passed",
+    "noninteractiveFish": "quiet",
+    "visualAcceptance": "passed",
+    "referenceFastfetchLayout": "passed",
+    "referenceFastfetchImage": "JPEG wallpaper displayed in real Kitty",
+    "referenceFastfetchVisual": "passed",
+    "freshKittyAutomaticFastfetch": "passed",
+    "previewEnvironment": "Agent NO_COLOR removed for the preview; user environment unchanged."
+  },
+  "postDeploymentSnapshot": {
+    "config": "home",
+    "number": 921,
+    "description": "holoarch-terminal-ready-20261001-225905",
+    "cleanup": "",
+    "created": "2026-10-01T22:59:05"
+  },
+  "localPostChangeBackup": "~/.local/state/holoarch/backups/20261001-225905-terminal-ready/",
+  "fastfetchConfig": "home/.config/fastfetch/config.jsonc",
+  "fastfetchLayoutSource": "StatIndet/dotfiles fastfetch/config.jsonc, pinned at 6947cdf70cddcf3d22532535ff5f47b5b434e170, adapted for this niri machine.",
+  "fastfetchLogo": "Local ~/.config/fastfetch/logo symlink to the user-approved existing wallpaper; image not published.",
+  "acceptedPromptSnapshot": {
+    "config": "home",
+    "number": 920,
+    "description": "holoarch-terminal-reference-20261001-223754",
+    "cleanup": ""
+  }
+}

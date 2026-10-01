@@ -1,11 +1,11 @@
 {
   "btop": false,
   "cava": false,
-  "kitty": false,
+  "kitty": true,
   "yazi": false,
   "holo-pywalfox": true,
   "holo-fuzzel": true,
-  "holo-kitty": true,
+  "holo-kitty": false,
   "holo-fcitx5": true,
   "holo-btop": true,
   "holo-cava": true,

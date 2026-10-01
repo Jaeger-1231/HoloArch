@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/StatIndet/dotfiles",
+  "branch": "master",
+  "commit": "6947cdf70cddcf3d22532535ff5f47b5b434e170",
+  "path": "fastfetch/config.jsonc",
+  "sha256": "f4b55914ccc692eb0c357a06405bd22f8e802db771f30abe87bbb7490cb509db",
+  "adaptations": [
+    "Use Kitty graphics and a local wallpaper symlink instead of the author home path.",
+    "Replace Hyprland splash command with HoloArch heading for niri.",
+    "Use named format fields for the installed Fastfetch version.",
+    "Report the actual local hardware, displays and drivers.",
+    "Use the Kitty image decoder for the existing JPEG wallpaper; kitty-direct on Kitty accepts PNG only."
+  ],
+  "upstreamLogoBundled": false,
+  "upstreamSha256": "0032e7e212ccabf563bdcab956349a09ce45b699b8beae9723de317854ea40d3",
+  "storedFormatting": "Tabs expanded and trailing whitespace removed; upstream values unchanged."
+}

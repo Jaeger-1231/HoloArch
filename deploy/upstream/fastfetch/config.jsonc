@@ -1,15 +1,20 @@
-// Adapted from StatIndet/dotfiles at 6947cdf70cddcf3d22532535ff5f47b5b434e170.
-// Change the logo symlink locally; no personal picture is published.
+/*
+HyDE provides xdg/share/fastfetch/presets/hyde/*.config.jsonc files for different layouts.
+You can also create your own config.jsonc file in the same directory to create a custom theme.
+
+To test HyDE's fastfetch theme, run:
+fastfetch --config hyde/*.jsonc
+
+*/
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "type": "kitty",
-    "source": "~/.config/fastfetch/logo",
-    "width": 27,
+    "source": "/home/archirithm/Pictures/new_world.jpg",
     "padding": {
-      "top": 1,
-      "left": 1,
-      "right": 2
+        "top": 1,
+        "left": 2,
+        "bottom": 1,
+        "right": 2
     }
   },
   "display": {
@@ -17,8 +22,10 @@
   },
   "modules": [
     {
-      "type": "custom",
-      "format": "  HoloArch"
+      "type": "command",
+      "key": "  ",
+      "keyColor": "blue",
+      "text": "splash=$(hyprctl splash);echo $splash"
     },
     {
       "type": "custom",
@@ -27,18 +34,18 @@
     {
       "type": "chassis",
       "key": "  󰇺 Chassis",
-      "format": "{type} {vendor}"
+      "format": "{1} {2} {3}"
     },
     {
       "type": "os",
       "key": "  󰣇 OS",
-      "format": "{name}",
+      "format": "{2}",
       "keyColor": "red"
     },
     {
       "type": "kernel",
       "key": "   Kernel",
-      "format": "{release}",
+      "format": "{2}",
       "keyColor": "red"
     },
     {
@@ -49,7 +56,7 @@
     {
       "type": "display",
       "key": "  󰍹 Display",
-      "format": "{width}x{height} @ {refresh-rate}Hz [{type}]",
+      "format": "{1}x{2} @ {3}Hz [{7}]",
       "keyColor": "green"
     },
     {
@@ -60,7 +67,7 @@
     {
       "type": "wm",
       "key": "  󱗃 WM",
-      "format": "{pretty-name}",
+      "format": "{2}",
       "keyColor": "yellow"
     },
     {
@@ -71,7 +78,7 @@
     {
       "type": "title",
       "key": "  ",
-      "format": "{user-name-colored} {at-symbol-colored} {host-name-colored}"
+      "format": "{6} {7} {8}"
     },
     {
       "type": "custom",
@@ -79,19 +86,19 @@
     },
     {
       "type": "cpu",
-      "format": "{name} @ {freq-max}",
+      "format": "{1} @ {7}",
       "key": "   CPU",
       "keyColor": "blue"
     },
     {
       "type": "gpu",
-      "format": "{name}",
+      "format": "{1} {2}",
       "key": "  󰊴 GPU",
       "keyColor": "blue"
     },
     {
       "type": "gpu",
-      "format": "{driver}",
+      "format": "{3}",
       "key": "   GPU Driver",
       "keyColor": "magenta"
     },
