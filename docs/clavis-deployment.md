@@ -43,18 +43,15 @@ Starship 布局按用户提供的作者终端截图适配：第一行左侧为�
 
 Fish 启动配置已收录到 `home/.config/fish/`。Starship/zoxide 仅在交互 Shell 初始化。`conf.d/holoarch-terminal.fish` 在每个新的交互 Kitty 窗口显示一次 Fastfetch，嵌套 Shell 不重复，非交互脚本不显示。使用 `Win+T` 打开终端，`fastfetch` 或 `fa` 可手动再次显示；`Ctrl+L` 清屏后查看截图中的简洁提示符。
 
-Fastfetch 使用作者另一个仓库 [StatIndet/dotfiles 的原配置](https://github.com/StatIndet/dotfiles/blob/6947cdf70cddcf3d22532535ff5f47b5b434e170/fastfetch/config.jsonc)，保留系统/硬件两组边框、字段顺序和底部彩色圆点。原文件及固定提交保存在 `deploy/upstream/fastfetch/`。适配替换了作者主目录路径、Hyprland splash 命令和旧字段编号；数据来自这台电脑，包含两个显示器及两块 GPU。图片使用 Kitty 图形通道，只有宽度固定为 27 列，保持图片比例。颜色使用终端 ANSI 色板，跟随 Kitty 的 Matugen 配色。
+Fastfetch 使用作者另一个仓库 [StatIndet/dotfiles 的原配置](https://github.com/StatIndet/dotfiles/blob/6947cdf70cddcf3d22532535ff5f47b5b434e170/fastfetch/config.jsonc)，保留系统/硬件两组边框、字段顺序和底部彩色圆点。原文件及固定提交保存在 `deploy/upstream/fastfetch/`。适配替换了作者主目录路径、Hyprland splash 命令和旧字段编号；数据来自这台电脑，包含两个显示器及两块 GPU。图片使用 Kitty 图形通道，由 `~/.local/bin/holoarch-fastfetch` 根据当前信息行数和终端单元格像素尺寸设置显示区域；图片与整组信息的上下边界对齐，宽度最多 27 列，窗口变窄时自动收缩。颜色使用终端 ANSI 色板，跟随 Kitty 的 Matugen 配色。
 
-作者配置中的 `new_world.jpg` 未包含在所查的公开仓库中。按用户选择，`~/.config/fastfetch/logo` 作为符号链接指向本机现有壁纸，图片不上传。换图片或在恢复配置后重新指定图片：
+作者配置中的 `new_world.jpg` 未包含在所查的公开仓库中。图片来源改为用户指定的 `~/Pictures/Fastfetch_Picture/`。每次新 Kitty 自动显示、`fa` 或不带参数的 `fastfetch` 都重新随机选图，多张时避免连续重复。添加 PNG、JPG/JPEG、WebP、GIF、BMP 后会自动加入选择。按原比例放大覆盖显示区域，超出部分从中心裁切；原图只读，裁切缓存位于 `~/.cache/holoarch/fastfetch/`，图片和缓存不上传。图片不足或窗口太窄时保留可读的信息；带参数的 `fastfetch` 保持系统 CLI 行为。
 
-```bash
-ln -sfn -- /图片的完整路径 ~/.config/fastfetch/logo
-fastfetch
-```
+`home/.local/bin/fastfetch` 是统一入口，调用随机渲染器；渲染器固定调用 `/usr/bin/fastfetch`，不受科研 Conda 的 Python/PATH 影响。依赖 `/usr/bin/python3`、Fastfetch、ImageMagick 和 Kitty。本机已安装。
 
 修改 Fastfetch 布局时编辑 `~/.config/matugen/templates/fastfetch-config.jsonc` 并同步到 `~/.config/fastfetch/config.jsonc`，避免下次调色覆盖。
 
-改提示符布局时编辑 `~/.config/matugen/templates/starship-colors.toml` 并同步 `~/.config/starship.toml`。终端改动前的完整本机归档位于 `~/.local/state/holoarch/backups/20261001-215045-pre-terminal/`。已验收提示符的 home Snapper **#920** 继续保留；包含最终 Fastfetch 的 home Snapper **#921**（`holoarch-terminal-ready-20261001-225905`）已创建并核对，无自动清理规则。最终 Git bundle 保存在 `~/.local/state/holoarch/backups/20261001-225905-terminal-ready/`；截图只保留本机。
+改提示符布局时编辑 `~/.config/matugen/templates/starship-colors.toml` 并同步 `~/.config/starship.toml`。终端改动前的完整本机归档位于 `~/.local/state/holoarch/backups/20261001-215045-pre-terminal/`。已验收提示符的 home Snapper **#920** 继续保留；初版 Fastfetch 的 home Snapper **#921** 和 Git bundle 继续保留；包含随机图片渲染器的 home Snapper **#923**（`holoarch-fastfetch-random-20261001-232922`）已创建并核对，无自动清理规则。最终 Git bundle 保存在 `~/.local/state/holoarch/backups/20261001-232922-fastfetch-random-ready/`；截图只保留本机。
 
 ## 验收与保留项
 

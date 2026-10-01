@@ -1,0 +1,123 @@
+#!/usr/bin/python3
+"""Render a random local portrait beside the current Fastfetch information."""
+
+import fcntl
+import hashlib
+import json
+import os
+from pathlib import Path
+import secrets
+import struct
+import subprocess
+import sys
+import tempfile
+import termios
+import unicodedata
+
+
+FASTFETCH = "/usr/bin/fastfetch"
+MAGICK = "/usr/bin/magick"
+IMAGE_TYPES = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp"}
+
+
+def run_fastfetch(*args):
+    os.execv(FASTFETCH, [FASTFETCH, *args])
+
+
+def cell_width(text):
+    return sum(
+        0 if unicodedata.combining(c) else
+        2 if unicodedata.east_asian_width(c) in {"W", "F"} else 1
+        for c in text
+    )
+
+
+def main():
+    # Explicit CLI options and non-terminal callers retain the system CLI.
+    if len(sys.argv) > 1 or not sys.stdout.isatty() or not os.environ.get("KITTY_WINDOW_ID"):
+        run_fastfetch(*sys.argv[1:])
+
+    picture_dir = Path(os.environ.get(
+        "HOLOARCH_FASTFETCH_PICTURES", str(Path.home() / "Pictures/Fastfetch_Picture")
+    )).expanduser()
+    pictures = sorted(p for p in picture_dir.glob("*")
+                      if p.is_file() and p.suffix.lower() in IMAGE_TYPES)
+    if not pictures:
+        print(f"Fastfetch 图片目录没有可用图片：{picture_dir}", file=sys.stderr)
+        run_fastfetch("--logo", "Arch", "--logo-type", "builtin")
+
+    info = subprocess.check_output(
+        [FASTFETCH, "--logo", "none", "--pipe", "true"], text=True, timeout=10
+    )
+    lines = info.rstrip("\n").splitlines()
+    rows, cols, pixel_width, pixel_height = struct.unpack(
+        "HHHH", fcntl.ioctl(sys.stdout.fileno(), termios.TIOCGWINSZ, b"\0" * 8)
+    )
+    rows, cols = rows or 40, cols or 100
+    right_width = max(map(cell_width, lines), default=1)
+    width = min(27, cols - right_width - 4)
+    if width < 8:
+        # Preserve readable system information when side-by-side no longer fits.
+        run_fastfetch("--logo", "none")
+    height = max(1, len(lines))
+    cell_x = pixel_width / cols if pixel_width else 9
+    cell_y = pixel_height / rows if pixel_height else 18
+    target_x, target_y = max(1, round(width * cell_x)), max(1, round(height * cell_y))
+
+    cache = Path(os.environ.get("XDG_CACHE_HOME", str(Path.home() / ".cache"))) / "holoarch/fastfetch"
+    cache.mkdir(parents=True, exist_ok=True, mode=0o700)
+    cache.chmod(0o700)
+    with (cache / "selection.lock").open("a+") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        previous = cache / "last-picture.txt"
+        last = previous.read_text() if previous.exists() else ""
+        choices = [p for p in pictures if str(p) != last] if len(pictures) > 1 else pictures
+        chosen = secrets.choice(choices)
+        previous.write_text(str(chosen))
+        previous.chmod(0o600)
+
+    stat = chosen.stat()
+    key = hashlib.sha256(
+        f"{chosen}:{stat.st_mtime_ns}:{stat.st_size}:{target_x}x{target_y}".encode()
+    ).hexdigest()
+    rendered = cache / (key + ".png")
+    if not rendered.exists():
+        # This is a disposable display buffer. The original picture is unchanged.
+        with tempfile.NamedTemporaryFile(dir=cache, suffix=".png", delete=False) as temporary:
+            pending = Path(temporary.name)
+        try:
+            result = subprocess.run([
+                MAGICK, str(chosen) + "[0]", "-auto-orient",
+                "-resize", f"{target_x}x{target_y}^", "-gravity", "center",
+                "-extent", f"{target_x}x{target_y}", str(pending),
+            ], capture_output=True, text=True, timeout=15)
+            if not result.returncode:
+                pending.chmod(0o600)
+                pending.replace(rendered)
+        finally:
+            pending.unlink(missing_ok=True)
+        if result.returncode:
+            print(f"Fastfetch 图片无法显示：{result.stderr.strip()}", file=sys.stderr)
+            run_fastfetch("--logo", "Arch", "--logo-type", "builtin")
+
+    # Private state is useful for checking geometry without publishing pictures.
+    state = cache / "last-render.json"
+    state.write_text(json.dumps({
+        "source": str(chosen), "rendered": str(rendered), "pictureCount": len(pictures),
+        "widthCells": width, "heightRows": height, "infoRows": len(lines),
+        "pixelWidth": target_x, "pixelHeight": target_y, "gravity": "center",
+    }, ensure_ascii=False, indent=2) + "\n")
+    state.chmod(0o600)
+    run_fastfetch(
+        "--logo", str(rendered), "--logo-type", "kitty",
+        "--logo-width", str(width), "--logo-height", str(height),
+        "--logo-padding-top", "0", "--logo-padding-left", "1", "--logo-padding-right", "2",
+    )
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (OSError, subprocess.SubprocessError) as error:
+        print(f"Fastfetch 图片准备失败：{error}", file=sys.stderr)
+        run_fastfetch("--logo", "Arch", "--logo-type", "builtin")

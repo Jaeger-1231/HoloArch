@@ -1,10 +1,10 @@
 // Adapted from StatIndet/dotfiles at 6947cdf70cddcf3d22532535ff5f47b5b434e170.
-// Change the logo symlink locally; no personal picture is published.
+// The local wrapper selects, scales and center-crops portraits for fa and startup.
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
   "logo": {
     "type": "kitty",
-    "source": "~/.config/fastfetch/logo",
+    "source": "~/Pictures/Fastfetch_Picture/*",
     "width": 27,
     "padding": {
       "top": 1,

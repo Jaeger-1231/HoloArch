@@ -24,26 +24,35 @@
     "noninteractiveFish": "quiet",
     "visualAcceptance": "passed",
     "referenceFastfetchLayout": "passed",
-    "referenceFastfetchImage": "JPEG wallpaper displayed in real Kitty",
+    "referenceFastfetchImage": "Random local portrait displayed in real Kitty",
     "referenceFastfetchVisual": "passed",
-    "freshKittyAutomaticFastfetch": "passed",
-    "previewEnvironment": "Agent NO_COLOR removed for the preview; user environment unchanged."
+    "freshKittyAutomaticFastfetch": "Final renderer verified with random portrait and clean prompt",
+    "previewEnvironment": "Agent NO_COLOR removed for the preview; user environment unchanged.",
+    "randomFastfetch": "Fresh Kitty auto and actual fa verified; no immediate repeats; image height matches 24 information rows; source hashes unchanged."
   },
   "postDeploymentSnapshot": {
     "config": "home",
-    "number": 921,
-    "description": "holoarch-terminal-ready-20261001-225905",
-    "cleanup": "",
-    "created": "2026-10-01T22:59:05"
+    "number": 923,
+    "description": "holoarch-fastfetch-random-20261001-232922",
+    "cleanup": ""
   },
-  "localPostChangeBackup": "~/.local/state/holoarch/backups/20261001-225905-terminal-ready/",
+  "localPostChangeBackup": "~/.local/state/holoarch/backups/20261001-232922-fastfetch-random-ready/",
   "fastfetchConfig": "home/.config/fastfetch/config.jsonc",
   "fastfetchLayoutSource": "StatIndet/dotfiles fastfetch/config.jsonc, pinned at 6947cdf70cddcf3d22532535ff5f47b5b434e170, adapted for this niri machine.",
-  "fastfetchLogo": "Local ~/.config/fastfetch/logo symlink to the user-approved existing wallpaper; image not published.",
+  "fastfetchLogo": "Random portrait from ~/Pictures/Fastfetch_Picture; center crop matches current information height; images and cache private.",
   "acceptedPromptSnapshot": {
     "config": "home",
     "number": 920,
     "description": "holoarch-terminal-reference-20261001-223754",
     "cleanup": ""
+  },
+  "fastfetchPicturesAtVerification": 3,
+  "fastfetchRenderer": "home/.local/bin/holoarch-fastfetch",
+  "initialFastfetchSnapshot": {
+    "config": "home",
+    "number": 921,
+    "description": "holoarch-terminal-ready-20261001-225905",
+    "cleanup": "",
+    "created": "2026-10-01T22:59:05"
   }
 }
