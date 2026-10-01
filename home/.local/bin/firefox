@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+set -u
+
+readonly FIREFOX_BIN="/usr/lib/firefox/firefox"
+readonly GPU_MODE_PATH="/sys/class/platform-profile/platform-profile-0/device/gpu_mode"
+readonly CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/holo-power-mode"
+readonly FIREFOX_GPU_FILE="${CONFIG_DIR}/firefox-gpu"
+
+read_choice() {
+    local value
+
+    if [[ -r "$FIREFOX_GPU_FILE" ]] && read -r value < "$FIREFOX_GPU_FILE"; then
+        case "$value" in
+            integrated|discrete) printf '%s\n' "$value"; return ;;
+        esac
+    fi
+    printf '%s\n' "integrated"
+}
+
+read_gpu_mode() {
+    local value
+
+    if [[ -r "$GPU_MODE_PATH" ]] && read -r value < "$GPU_MODE_PATH"; then
+        printf '%s\n' "$value"
+    else
+        printf '%s\n' "hybrid"
+    fi
+}
+
+exec_integrated() {
+    exec env \
+        -u __NV_PRIME_RENDER_OFFLOAD \
+        -u __GLX_VENDOR_LIBRARY_NAME \
+        -u __VK_LAYER_NV_optimus \
+        -u DRI_PRIME \
+        "$FIREFOX_BIN" "$@"
+}
+
+exec_discrete() {
+    exec env \
+        __NV_PRIME_RENDER_OFFLOAD=1 \
+        __GLX_VENDOR_LIBRARY_NAME=nvidia \
+        __VK_LAYER_NV_optimus=NVIDIA_only \
+        "$FIREFOX_BIN" "$@"
+}
+
+case "$(read_gpu_mode):$(read_choice)" in
+    hybrid:discrete|discrete:*) exec_discrete "$@" ;;
+    *) exec_integrated "$@" ;;
+esac

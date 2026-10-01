@@ -1,0 +1,140 @@
+#!/usr/bin/bash
+
+set -euo pipefail
+
+readonly GPU_MODE_PATH="/sys/class/platform-profile/platform-profile-0/device/gpu_mode"
+readonly PLATFORM_PROFILE_PATH="/sys/firmware/acpi/platform_profile"
+readonly STATE_DIR="/var/lib/holo-power-mode"
+readonly DESIRED_FILE="${STATE_DIR}/desired"
+readonly DESIRED_GPU_FILE="${STATE_DIR}/desired-gpu"
+readonly RUNTIME_DIR="/run/holo-power-mode"
+readonly BOOT_GPU_FILE="${RUNTIME_DIR}/boot-gpu-mode"
+readonly PENDING_REBOOT_FILE="${RUNTIME_DIR}/pending-reboot"
+
+if [[ $EUID -ne 0 ]]; then
+    printf 'holo-power-gpu must run as root\n' >&2
+    exit 1
+fi
+
+if [[ $# -ne 1 ]]; then
+    printf 'usage: holo-power-gpu {eco|balanced|performance|gpu-hybrid|gpu-discrete|--restore}\n' >&2
+    exit 2
+fi
+
+requested_mode="$1"
+restore_mode="no"
+gpu_only="no"
+if [[ "$requested_mode" == "--restore" ]]; then
+    restore_mode="yes"
+    if [[ ! -r "$DESIRED_FILE" ]]; then
+        exit 0
+    fi
+    read -r requested_mode < "$DESIRED_FILE"
+elif [[ "$requested_mode" == gpu-hybrid || "$requested_mode" == gpu-discrete ]]; then
+    gpu_only="yes"
+fi
+
+readonly REQUESTED_MODE="$requested_mode"
+original_platform="$(<"$PLATFORM_PROFILE_PATH")"
+original_gpu="$(<"$GPU_MODE_PATH")"
+case "$REQUESTED_MODE" in
+    eco)
+        TARGET_PLATFORM="low-power"
+        TARGET_GPU="$original_gpu"
+        ;;
+    balanced)
+        TARGET_PLATFORM="balanced"
+        TARGET_GPU="$original_gpu"
+        ;;
+    performance)
+        TARGET_PLATFORM="balanced-performance"
+        TARGET_GPU="$original_gpu"
+        ;;
+    gpu-hybrid|gpu-discrete)
+        TARGET_PLATFORM="$original_platform"
+        TARGET_GPU="${REQUESTED_MODE#gpu-}"
+        ;;
+    *)
+        printf 'invalid system mode: %s\n' "$REQUESTED_MODE" >&2
+        exit 2
+        ;;
+esac
+
+if [[ ! -w "$PLATFORM_PROFILE_PATH" ]]; then
+    printf 'platform profile interface is not writable: %s\n' "$PLATFORM_PROFILE_PATH" >&2
+    exit 1
+fi
+if [[ ! -w "$GPU_MODE_PATH" ]]; then
+    printf 'GPU mode interface is not writable: %s\n' "$GPU_MODE_PATH" >&2
+    exit 1
+fi
+
+/usr/bin/install -d -o root -g root -m 0755 "$RUNTIME_DIR"
+if [[ ! -r "$BOOT_GPU_FILE" ]]; then
+    printf '%s\n' "$original_gpu" > "$BOOT_GPU_FILE"
+    /usr/bin/chown root:root "$BOOT_GPU_FILE"
+    /usr/bin/chmod 0644 "$BOOT_GPU_FILE"
+fi
+read -r boot_gpu < "$BOOT_GPU_FILE"
+
+if [[ "$TARGET_PLATFORM" != "$original_platform" ]]; then
+    if ! printf '%s\n' "$TARGET_PLATFORM" > "$PLATFORM_PROFILE_PATH" 2>/dev/null; then
+        if [[ "$REQUESTED_MODE" == "performance" ]] &&
+           printf '%s\n' balanced > "$PLATFORM_PROFILE_PATH"; then
+            TARGET_PLATFORM="balanced"
+        else
+            printf 'failed to set platform profile to %s\n' "$TARGET_PLATFORM" >&2
+            exit 1
+        fi
+    fi
+fi
+
+if [[ "$original_gpu" != "$TARGET_GPU" ||
+      ( "$gpu_only" == "yes" && -e "$PENDING_REBOOT_FILE" ) ]]; then
+    if ! printf '%s\n' "$TARGET_GPU" > "$GPU_MODE_PATH"; then
+        printf '%s\n' "$original_platform" > "$PLATFORM_PROFILE_PATH" || true
+        printf 'failed to set GPU mode to %s; platform profile restored\n' "$TARGET_GPU" >&2
+        exit 1
+    fi
+fi
+
+actual_platform="$(<"$PLATFORM_PROFILE_PATH")"
+actual_gpu="$(<"$GPU_MODE_PATH")"
+if [[ "$actual_platform" != "$TARGET_PLATFORM" ||
+      ( "$actual_gpu" != "$TARGET_GPU" && "$actual_gpu" != "$original_gpu" ) ]]; then
+    printf '%s\n' "$original_platform" > "$PLATFORM_PROFILE_PATH" || true
+    printf '%s\n' "$original_gpu" > "$GPU_MODE_PATH" || true
+    printf 'firmware reported platform=%s gpu=%s after requesting platform=%s gpu=%s\n' \
+        "$actual_platform" "$actual_gpu" "$TARGET_PLATFORM" "$TARGET_GPU" >&2
+    exit 1
+fi
+
+/usr/bin/install -d -o root -g root -m 0755 "$STATE_DIR"
+if [[ "$restore_mode" == "no" ]]; then
+    if [[ "$gpu_only" == "yes" ]]; then
+        state_file="$DESIRED_GPU_FILE"
+        state_value="$TARGET_GPU"
+    else
+        state_file="$DESIRED_FILE"
+        state_value="$REQUESTED_MODE"
+    fi
+    temporary_file="$(/usr/bin/mktemp "${state_file}.tmp.XXXXXX")"
+    printf '%s\n' "$state_value" > "$temporary_file"
+    /usr/bin/chown root:root "$temporary_file"
+    /usr/bin/chmod 0644 "$temporary_file"
+    /usr/bin/mv -f "$temporary_file" "$state_file"
+fi
+
+if [[ "$gpu_only" == "yes" ]]; then
+    if [[ "$TARGET_GPU" == "$boot_gpu" && "$actual_gpu" == "$TARGET_GPU" ]]; then
+        /usr/bin/rm -f "$PENDING_REBOOT_FILE"
+    else
+        printf '%s -> %s\n' "$boot_gpu" "$TARGET_GPU" > "$PENDING_REBOOT_FILE"
+        /usr/bin/chown root:root "$PENDING_REBOOT_FILE"
+        /usr/bin/chmod 0644 "$PENDING_REBOOT_FILE"
+    fi
+fi
+
+/usr/bin/logger -t holo-power-mode "system mode set to ${REQUESTED_MODE} (platform=${TARGET_PLATFORM}, gpu=${TARGET_GPU}) by uid ${PKEXEC_UID:-boot}"
+printf 'system mode set to %s: platform=%s gpu=%s\n' \
+    "$REQUESTED_MODE" "$TARGET_PLATFORM" "$TARGET_GPU"

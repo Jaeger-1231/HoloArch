@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# 绑定在 kitty 的 ctrl+shift+v 上：
+#   剪贴板是图片 → 存成 /tmp 文件、把路径贴进前台 CLI、并浮层预览
+#   否则         → 退化成普通文本粘贴
+set -euo pipefail
+
+# 1) 剪贴板里有图片吗（Wayland）
+mime=""
+if [ -n "${WAYLAND_DISPLAY:-}" ] && command -v wl-paste >/dev/null 2>&1; then
+    mime="$(wl-paste --list-types 2>/dev/null | grep -m1 -E '^image/' || true)"
+fi
+
+# 2) 不是图片 → 普通文本粘贴
+if [ -z "$mime" ]; then
+    wl-paste --no-newline 2>/dev/null | kitty @ send-text --stdin
+    exit 0
+fi
+
+# 3) 存成临时文件（扩展名跟随剪贴板给的 MIME）
+ext="${mime#image/}"
+ext="${ext%%;*}"
+[ "$ext" = "jpeg" ] && ext="jpg"
+file="$(mktemp "${TMPDIR:-/tmp}/clip-XXXXXX.$ext")"
+wl-paste --type "$mime" >"$file"
+
+# 4) 把路径贴进前台 CLI：Claude Code / Codex 都识别图片路径为附件
+printf '%s' "$file" | kitty @ send-text --stdin
+
+# 5) 浮层预览：按键会重定向到 overlay，任意键关闭
+kitty @ launch --type=overlay --allow-remote-control \
+    kitten icat --hold --scale-up "$file"

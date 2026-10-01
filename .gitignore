@@ -1,0 +1,22 @@
+# Local archives and runtime data belong outside this public repository.
+private/
+backups/
+*.tar
+*.tar.gz
+*.tar.zst
+*.log
+__pycache__/
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+**/credentials
+**/tokens.json
+**/auth.json
+**/bookmarks
+**/cached_layouts
+.ssh/
+.aws/
+.cache/
+

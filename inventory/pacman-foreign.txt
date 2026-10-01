@@ -1,0 +1,16 @@
+cursor-appimage 3.21.16-1
+ddcutil-service 1.0.15-1
+ddcutil-service-debug 1.0.15-1
+niri-sidebar-git v0.4.0.r0.g954f62e-1
+niri-sidebar-git-debug v0.4.0.r0.g954f62e-1
+niriswitcher 0.7.1-1
+nirius 0.9.0-1
+nirius-debug 0.8.0-1
+python-imageio-ffmpeg 0.6.0-2
+python-screeninfo 0.8.1-2
+ttf-jetbrains-maple-mono-nf-xx-xx 1.2304.76-1
+ttf-lxgw-wenkai-screen 1.520-1
+visual-studio-code-bin 1.139.1-1
+wayfreeze-git r90.59ac913-1
+waypaper 2.9-1
+wechat-bin 4.1.13.23-1

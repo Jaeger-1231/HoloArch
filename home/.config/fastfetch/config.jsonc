@@ -1,0 +1,140 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    //"type": "kitty",
+    //"source": "/home/zhuoran/Pictures/picture.png",
+    "width": 25,
+    // "height":20,
+    "color":{
+      "1":"#8ecff2",
+      "2":"#8ecff2"
+    },
+    "padding": {
+      "top": 1, // Top padding
+      "left": 2, // Left padding
+      "right": 2 // Right padding
+    },
+  },
+  "display": {
+    "separator": " ", // Separator between keys and values
+    "color": {
+      //"keys": "#b5c9d7", // Key color module名字的颜色
+      "title": "#c0c7cd", // Title color 主机名的颜色
+      "output": "#c0c7cd"
+    },
+  },
+  "modules": [
+    "break",
+    {
+      "type": "os", //这是哪个module
+      "key": "OS", //module名字的显示
+      // "keyColor": "#00ff00",      //module名字颜色
+      // "format": "{name} {version}",    //具体内容
+      "keyColor": "#8ecff2",
+   
+    },
+    {
+      "type": "kernel",
+      "key": " ├   KER ",
+      "keyColor": "#8ecff2",
+
+    },
+    {
+      "type": "packages",
+      "key": " ├   PAK ",
+      "format": "{all}",
+      "keyColor": "#8ecff2",
+    },
+    {
+      "type": "command",
+      "key": " ├   AGE ",
+      "text": "birth_install=$(stat -c %W / 2>/dev/null || stat -f %B /); current=$(date +%s); days_difference=$(( (current - birth_install) / 86400 )); echo $days_difference days",
+      "keyColor": "#8ecff2",
+    },
+    {
+      "type": "title",
+      "key": " └   USR ",
+      "keyColor": "#8ecff2",
+    },
+    "break",
+    "break",
+    {
+      "type": "wm",
+      "key": "WM",
+      "keyColor": "#c9c2ea",
+   },
+    {
+      "type": "de",
+      "key": " ├ 󱈹  DES ",
+      "keyColor": "#c9c2ea",
+     //"outputColor": "#c9c2ea"
+    },
+    {
+      "type": "shell",
+      "key": " ├   SHE ",
+      "keyColor": "#c9c2ea",
+      //"outputColor": "#c9c2ea"
+    },
+    {
+      "type": "terminal",
+      "key": " ├   TER ",
+      "keyColor": "#c9c2ea",
+      //"outputColor": "#c9c2ea"
+    },
+    {
+      "type": "terminalfont",
+      "key": " └   TFO ",
+      "keyColor": "#c9c2ea",
+      //"outputColor": "#c9c2ea"
+    },
+    "break",
+    "break",
+    {
+      "type": "host",
+      "key": "PC ",
+      "keyColor": "#d1e6f3",
+      //"outputColor": "#b5c9d7"
+    },
+    {
+      "type": "cpu",
+      "key": " ├   CPU ",
+      "keyColor": "#d1e6f3",
+      //"outputColor": "#b5c9d7"
+    },
+    {
+      "type": "memory",
+      "key": " ├   MEM ",
+      "keyColor": "#d1e6f3",
+      //"outputColor": "#b5c9d7"
+    },
+    {
+      "type": "swap",
+      "key": " ├   SWP ",
+      "keyColor": "#d1e6f3",
+      //"outputColor": "#b5c9d7"
+    },
+    {
+      "type": "gpu",
+      "key": " ├ 󰢮  GPU ",
+      "format": "{1} {2}",
+      "keyColor": "#d1e6f3",
+      //"outputColor": "#b5c9d7"
+    },
+    {
+      "type": "display",
+      "key": " ├   MON ",
+      "format": "{name} {width}x{height}@{refresh-rate} ",
+      "keyColor": "#d1e6f3",
+      //"outputColor": "#b5c9d7"
+    },
+    {
+      "type": "disk",
+      "key": " └ 󰋊  DIS ",
+      "keyColor": "#d1e6f3",
+      //"outputColor": "#b5c9d7"
+    },
+    "break",
+    "break",
+    "colors"
+  ]
+}

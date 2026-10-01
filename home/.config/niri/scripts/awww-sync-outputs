@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+
+set -u
+
+readonly RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}"
+readonly LOCK_FILE="${RUNTIME_DIR}/awww-sync-outputs-${UID}.lock"
+readonly CURRENT_WALLPAPER="${HOME}/.cache/.current_wallpaper"
+readonly WAYPAPER_CONFIG="${HOME}/.config/waypaper/config.ini"
+
+find_wallpaper() {
+    local query="$1"
+    local line wallpaper
+
+    while IFS= read -r line; do
+        if [[ "$line" == *"currently displaying: image: "* ]]; then
+            wallpaper="${line#*currently displaying: image: }"
+            if [[ -f "$wallpaper" ]]; then
+                printf '%s\n' "$wallpaper"
+                return 0
+            fi
+        fi
+    done <<< "$query"
+
+    if [[ -e "$CURRENT_WALLPAPER" ]]; then
+        wallpaper="$(readlink -f "$CURRENT_WALLPAPER" 2>/dev/null || true)"
+        if [[ -f "$wallpaper" ]]; then
+            printf '%s\n' "$wallpaper"
+            return 0
+        fi
+    fi
+
+    if [[ -r "$WAYPAPER_CONFIG" ]]; then
+        wallpaper="$(sed -n 's/^wallpaper[[:space:]]*=[[:space:]]*//p' "$WAYPAPER_CONFIG" | head -n 1)"
+        wallpaper="${wallpaper/#\~/${HOME}}"
+        if [[ -f "$wallpaper" ]]; then
+            printf '%s\n' "$wallpaper"
+            return 0
+        fi
+    fi
+
+    return 1
+}
+
+sync_once() {
+    local query wallpaper line output
+
+    query="$(awww query 2>/dev/null)" || return 1
+    wallpaper="$(find_wallpaper "$query")" || return 1
+
+    while IFS= read -r line; do
+        if [[ "$line" =~ ^:[[:space:]]+([^:]+):.*currently[[:space:]]displaying:[[:space:]]color: ]]; then
+            output="${BASH_REMATCH[1]}"
+            awww img -o "$output" --transition-type fade --transition-duration 0.5 "$wallpaper" >/dev/null 2>&1 || true
+        fi
+    done <<< "$query"
+}
+
+if [[ "${1:-}" == "--once" ]]; then
+    sync_once
+    exit $?
+fi
+
+exec 9>"$LOCK_FILE"
+flock -n 9 || exit 0
+
+while true; do
+    sync_once || true
+    sleep 2
+done

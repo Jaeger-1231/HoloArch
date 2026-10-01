@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-10-01T19:41:23.793839+08:00",
+  "repository": "https://github.com/Jaeger-1231/HoloArch",
+  "visibility": "public",
+  "baseline": "before Clavis migration",
+  "source_files": 233,
+  "source_bytes": 1362217,
+  "local_archive": "/home/zhuoran/.local/state/holoarch/backups/20261001-194122/desktop-exact.tar.gz",
+  "local_archive_sha256": "291c2e1f273abf84814203318666750a8f10cc7cfb593b789fec064b85a5bdbd",
+  "credential_review": {
+    "automated_candidates": 1,
+    "reviewed_false_positives": 1,
+    "finding": "portal.Secret=gnome-keyring selects a backend and contains no credential",
+    "unresolved": 0
+  },
+  "snapshot_status": "pending",
+  "snapshots": {}
+}

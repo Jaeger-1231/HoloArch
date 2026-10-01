@@ -1,0 +1,4 @@
+// 保留所有固件当前启用的 DRM 设备。
+// UMA 模式下固件只提供 AMD；Discrete 模式下由 NVIDIA 接管；
+// Hybrid 模式下 niri 可同时使用 AMD 内屏和 NVIDIA HDMI 输出。
+// 不再 ignore NVIDIA，否则外接 HDMI 会被 niri 完全隐藏。

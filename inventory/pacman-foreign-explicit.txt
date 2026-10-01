@@ -1,0 +1,10 @@
+cursor-appimage
+ddcutil-service
+niri-sidebar-git
+niriswitcher
+ttf-jetbrains-maple-mono-nf-xx-xx
+ttf-lxgw-wenkai-screen
+visual-studio-code-bin
+wayfreeze-git
+waypaper
+wechat-bin

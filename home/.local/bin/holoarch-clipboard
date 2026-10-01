@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+for command_name in cliphist fuzzel wl-copy; do
+    command -v "$command_name" >/dev/null 2>&1 || {
+        printf '缺少命令：%s\n' "$command_name" >&2
+        exit 1
+    }
+done
+
+selection=$(cliphist list | fuzzel --dmenu --prompt='Clipboard > ' --width=80 --lines=20) || exit 0
+[[ -n "$selection" ]] || exit 0
+cliphist decode <<< "$selection" | wl-copy

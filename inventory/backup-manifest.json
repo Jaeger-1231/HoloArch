@@ -1,0 +1,1882 @@
+{
+  "created_at": "2026-10-01T19:41:23.793839+08:00",
+  "source_home": "/home/zhuoran",
+  "scope": "Desktop configuration before Clavis migration",
+  "files": [
+    {
+      "path": "home/.config/niri/animations.kdl",
+      "source": "/home/zhuoran/.config/niri/animations.kdl",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2558,
+      "sha256": "8391e5bbcf3b3eba22b7141c161a1eb07c76956bb94e0244ee060962c0d195bc"
+    },
+    {
+      "path": "home/.config/niri/binds.kdl",
+      "source": "/home/zhuoran/.config/niri/binds.kdl",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 24135,
+      "sha256": "f232cc8e4eabe5fed318574b79efe9380cd3f7274c53631e3ae0d4d2aada5782"
+    },
+    {
+      "path": "home/.config/niri/blur.kdl",
+      "source": "/home/zhuoran/.config/niri/blur.kdl",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2025,
+      "sha256": "3184d9215d12ed8022c847af268f0e3c2fbb43edc23f23b1836a3c5b7ca9ff21"
+    },
+    {
+      "path": "home/.config/niri/colors.kdl",
+      "source": "/home/zhuoran/.config/niri/colors.kdl",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 241,
+      "sha256": "b024ed7965eda515e1494f1ee870b6d223bc38292d763d36e484bf6b5afd39c1"
+    },
+    {
+      "path": "home/.config/niri/config.kdl",
+      "source": "/home/zhuoran/.config/niri/config.kdl",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8000,
+      "sha256": "8d91e4b25c63f17bd5e43578ff4e66769a92f57f492a6ff1787c600b84cd7ffc"
+    },
+    {
+      "path": "home/.config/niri/debug.kdl",
+      "source": "/home/zhuoran/.config/niri/debug.kdl",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 277,
+      "sha256": "10a0e667ea55c340feb737439555a08ee206b958f8abe39a232fa1cb5f24242b"
+    },
+    {
+      "path": "home/.config/niri/dms/colors.kdl",
+      "source": "/home/zhuoran/.config/niri/dms/colors.kdl",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "home/.config/niri/hyprlock.conf",
+      "source": "/home/zhuoran/.config/niri/hyprlock.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4995,
+      "sha256": "00e57472e80e20ad374fe74f66aa74a19417dd19c99a5776e71a77207c728572"
+    },
+    {
+      "path": "home/.config/niri/layout.kdl",
+      "source": "/home/zhuoran/.config/niri/layout.kdl",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 6756,
+      "sha256": "29cc7c195382ca0ea9a4fb2978b179e48bf2553e9792cb853333a84bee8f3ed2"
+    },
+    {
+      "path": "home/.config/niri/output-example.kdl",
+      "source": "/home/zhuoran/.config/niri/output-example.kdl",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 192,
+      "sha256": "b00ce3a95e87d7047b06cec0f3e05c0c2b1c0262c8f9f40a81fe7c4f12770b15"
+    },
+    {
+      "path": "home/.config/niri/output.kdl",
+      "source": "/home/zhuoran/.config/niri/output.kdl",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "home/.config/niri/rule.kdl",
+      "source": "/home/zhuoran/.config/niri/rule.kdl",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 6066,
+      "sha256": "bace59bb299edbe645ddcdeee6c4f099817812b78a452c9fa28ee8787be0e559"
+    },
+    {
+      "path": "home/.config/niri/scripts/awww-sync-outputs",
+      "source": "/home/zhuoran/.config/niri/scripts/awww-sync-outputs",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 1876,
+      "sha256": "7c7c33403b1656121358da8219a0e817545901c08a245b13265786164c2ca7a9"
+    },
+    {
+      "path": "home/.config/niri/scripts/niri-binds",
+      "source": "/home/zhuoran/.config/niri/scripts/niri-binds",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 2046,
+      "sha256": "495373cc5d93111d4539ed504eeba3496e844d0df88b0ddfd86fee3874e46d74"
+    },
+    {
+      "path": "home/.config/niri/scripts/niri-force-kill-window",
+      "source": "/home/zhuoran/.config/niri/scripts/niri-force-kill-window",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 6179,
+      "sha256": "4800c23c251bd93549623f9af4cf690bf3bb8a365a0eef3796116e3cc26a8a17"
+    },
+    {
+      "path": "home/.config/niri/scripts/niri-pick",
+      "source": "/home/zhuoran/.config/niri/scripts/niri-pick",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 9297,
+      "sha256": "fd3418a5fe3186ad8893a02d38aa2c9c7ac84033998ab427cc23df6788b4440a"
+    },
+    {
+      "path": "home/.config/niri/scripts/niri-quick-switch-fuzzel.py",
+      "source": "/home/zhuoran/.config/niri/scripts/niri-quick-switch-fuzzel.py",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 5179,
+      "sha256": "5d39ec9eecb7991f25391dd2f06d9426700151aea78812c62a3f4d8dc7922dab"
+    },
+    {
+      "path": "home/.config/niri/scripts/powermenu",
+      "source": "/home/zhuoran/.config/niri/scripts/powermenu",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 1398,
+      "sha256": "75066c8ff7d172bde1007edafb619fae311304afe77222dae4410cbd1a2d055b"
+    },
+    {
+      "path": "home/.config/niri/scripts/screenshot-sound.sh",
+      "source": "/home/zhuoran/.config/niri/scripts/screenshot-sound.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 2386,
+      "sha256": "18ca790145c261f514b4c4f787bb1cb9286e3e52b229e7b1098a05f79affad76"
+    },
+    {
+      "path": "home/.config/niri/scripts/swayidle.sh",
+      "source": "/home/zhuoran/.config/niri/scripts/swayidle.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 288,
+      "sha256": "4eca03d6cf458b26c3cbaafa4813b233b45f5c8e2a91e7bbdb2e35cdc9ae0afe"
+    },
+    {
+      "path": "home/.config/waybar/colors.css",
+      "source": "/home/zhuoran/.config/waybar/colors.css",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 2249,
+      "sha256": "df0b4c7882a98e559b9145e413f6f6957693e56fc6b340d2e6defc2f8e1aeef5"
+    },
+    {
+      "path": "home/.config/waybar/config.jsonc",
+      "source": "/home/zhuoran/.config/waybar/config.jsonc",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 1732,
+      "sha256": "8d0a33474d8d651f4667b2dfbca80a712137594aa93153964dcaa28324b9e12a"
+    },
+    {
+      "path": "home/.config/waybar/logo/bluetooth.png",
+      "source": "/home/zhuoran/.config/waybar/logo/bluetooth.png",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 40424,
+      "sha256": "d294b4172b415443920e5469c9f190d074c76530e4ee12f2ae8285a6f228464d"
+    },
+    {
+      "path": "home/.config/waybar/modules-dividers.jsonc",
+      "source": "/home/zhuoran/.config/waybar/modules-dividers.jsonc",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 1459,
+      "sha256": "23579672cce599e7a816bbe3e6f5d7c8e6f07a9d3eaefe2e04283fbc8587d3c7"
+    },
+    {
+      "path": "home/.config/waybar/modules.jsonc",
+      "source": "/home/zhuoran/.config/waybar/modules.jsonc",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 13325,
+      "sha256": "98967889316411c3fce2edaeb0ce00f58cb8459e65f9afe51c2cb748b1f62118"
+    },
+    {
+      "path": "home/.config/waybar/scripts/cava.sh",
+      "source": "/home/zhuoran/.config/waybar/scripts/cava.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 1612,
+      "sha256": "8c3ef45850ef08d4a247575ec11ac303684c22bcc56bb5f298edf1efd86d0de1"
+    },
+    {
+      "path": "home/.config/waybar/scripts/command-center.sh",
+      "source": "/home/zhuoran/.config/waybar/scripts/command-center.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 6269,
+      "sha256": "3384bc4e7b7a5bb49dd4ee529921e5694982c3142dc263c1c2db0672a640fdad"
+    },
+    {
+      "path": "home/.config/waybar/scripts/holo-power-mode",
+      "source": "/home/zhuoran/.config/waybar/scripts/holo-power-mode",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 17441,
+      "sha256": "774a1120227142b429f287130c0a5d1417f01e7331277eccd23c47d9bf267dc5"
+    },
+    {
+      "path": "home/.config/waybar/scripts/holoarch-updates.sh",
+      "source": "/home/zhuoran/.config/waybar/scripts/holoarch-updates.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 5178,
+      "sha256": "79c8c11dd2c37558778e55697c6b6394bd8b14384104b132de78d060e20599f4"
+    },
+    {
+      "path": "home/.config/waybar/scripts/old-longshot.sh",
+      "source": "/home/zhuoran/.config/waybar/scripts/old-longshot.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 6848,
+      "sha256": "e74e315b9868d34be258f287ab7d442d2c1c4d0c60e4bb1beb97f8b9601a33f2"
+    },
+    {
+      "path": "home/.config/waybar/scripts/power-screenshot.sh",
+      "source": "/home/zhuoran/.config/waybar/scripts/power-screenshot.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 17774,
+      "sha256": "d56923a914da3cd364af8e6b565e3e2f2dc1e2bf3c7169019a87e1ffbb810ebd"
+    },
+    {
+      "path": "home/.config/waybar/scripts/screenrec",
+      "source": "/home/zhuoran/.config/waybar/scripts/screenrec",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 34144,
+      "sha256": "be977c4645e52069e83aab0316fdfaa9362d44017c7d85ca3ccd6a70faad1c42"
+    },
+    {
+      "path": "home/.config/waybar/scripts/screenshot.sh",
+      "source": "/home/zhuoran/.config/waybar/scripts/screenshot.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 239,
+      "sha256": "bb12bca755e907fcf2a731f2e73330522d43e7f3fdc5f4b053805319cf2994b8"
+    },
+    {
+      "path": "home/.config/waybar/scripts/select-network-tui.sh",
+      "source": "/home/zhuoran/.config/waybar/scripts/select-network-tui.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 3109,
+      "sha256": "7d39b844cbef4a4e11e53f50edef9a643960b4d65aa58b1491571ef1cb4f1fa7"
+    },
+    {
+      "path": "home/.config/waybar/scripts/toggle-bluetooth.sh",
+      "source": "/home/zhuoran/.config/waybar/scripts/toggle-bluetooth.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 636,
+      "sha256": "2ab8eeb4976b674c7d3e2857a1d5449c2b49262cc95ffce933f6303fb8747476"
+    },
+    {
+      "path": "home/.config/waybar/style.css",
+      "source": "/home/zhuoran/.config/waybar/style.css",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 12267,
+      "sha256": "29e94b25498cb2771c425d31b8c41adbdcb697d13677b90cee048829ce07c7c3"
+    },
+    {
+      "path": "home/.config/waybar-niri-Win11Like/colors.css",
+      "source": "/home/zhuoran/.config/waybar-niri-Win11Like/colors.css",
+      "type": "symlink",
+      "mode": "0o777",
+      "bytes": 39,
+      "sha256": "d8a0281fbc92367e81f1f4ce7a8c4d9dd6589f667ef3050f7870c9cb1527b1ac"
+    },
+    {
+      "path": "home/.config/waybar-niri-Win11Like/config.jsonc",
+      "source": "/home/zhuoran/.config/waybar-niri-Win11Like/config.jsonc",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 958,
+      "sha256": "4fef6dc51d4f89498a49a2628f682c0c7bddcc09b09a709a663f2d7a7dbdebcf"
+    },
+    {
+      "path": "home/.config/waybar-niri-Win11Like/logo/bluetooth.png",
+      "source": "/home/zhuoran/.config/waybar-niri-Win11Like/logo/bluetooth.png",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 40424,
+      "sha256": "d294b4172b415443920e5469c9f190d074c76530e4ee12f2ae8285a6f228464d"
+    },
+    {
+      "path": "home/.config/waybar-niri-Win11Like/modules.jsonc",
+      "source": "/home/zhuoran/.config/waybar-niri-Win11Like/modules.jsonc",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 13301,
+      "sha256": "fcd8a3ec72d352e1f20fefc696c86c238e3c5575eb3792f9fde892a20fe8347b"
+    },
+    {
+      "path": "home/.config/waybar-niri-Win11Like/scripts/cava.sh",
+      "source": "/home/zhuoran/.config/waybar-niri-Win11Like/scripts/cava.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 1612,
+      "sha256": "8d646b1da379d92c1d59a0d16727788c588b6f6c9c9261a2d2b8c86131165550"
+    },
+    {
+      "path": "home/.config/waybar-niri-Win11Like/scripts/command-center.sh",
+      "source": "/home/zhuoran/.config/waybar-niri-Win11Like/scripts/command-center.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 6269,
+      "sha256": "3384bc4e7b7a5bb49dd4ee529921e5694982c3142dc263c1c2db0672a640fdad"
+    },
+    {
+      "path": "home/.config/waybar-niri-Win11Like/scripts/power-screenshot.sh",
+      "source": "/home/zhuoran/.config/waybar-niri-Win11Like/scripts/power-screenshot.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 17774,
+      "sha256": "d56923a914da3cd364af8e6b565e3e2f2dc1e2bf3c7169019a87e1ffbb810ebd"
+    },
+    {
+      "path": "home/.config/waybar-niri-Win11Like/scripts/screenrec",
+      "source": "/home/zhuoran/.config/waybar-niri-Win11Like/scripts/screenrec",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 34144,
+      "sha256": "be977c4645e52069e83aab0316fdfaa9362d44017c7d85ca3ccd6a70faad1c42"
+    },
+    {
+      "path": "home/.config/waybar-niri-Win11Like/scripts/screenshot.sh",
+      "source": "/home/zhuoran/.config/waybar-niri-Win11Like/scripts/screenshot.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 239,
+      "sha256": "bb12bca755e907fcf2a731f2e73330522d43e7f3fdc5f4b053805319cf2994b8"
+    },
+    {
+      "path": "home/.config/waybar-niri-Win11Like/scripts/select-network-tui.sh",
+      "source": "/home/zhuoran/.config/waybar-niri-Win11Like/scripts/select-network-tui.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 3109,
+      "sha256": "7d39b844cbef4a4e11e53f50edef9a643960b4d65aa58b1491571ef1cb4f1fa7"
+    },
+    {
+      "path": "home/.config/waybar-niri-Win11Like/scripts/toggle-bluetooth.sh",
+      "source": "/home/zhuoran/.config/waybar-niri-Win11Like/scripts/toggle-bluetooth.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 636,
+      "sha256": "2ab8eeb4976b674c7d3e2857a1d5449c2b49262cc95ffce933f6303fb8747476"
+    },
+    {
+      "path": "home/.config/waybar-niri-Win11Like/style.css",
+      "source": "/home/zhuoran/.config/waybar-niri-Win11Like/style.css",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 8140,
+      "sha256": "843e9ac155e48177fc3d030b5f4ca0c4df953bb1270265e6eedfb5eeb2cdebdf"
+    },
+    {
+      "path": "home/.config/mako/colors.conf",
+      "source": "/home/zhuoran/.config/mako/colors.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 65,
+      "sha256": "631af85a54f05f67edd0c5c6ea969a356fb4b852946389832c33003b68d9b024"
+    },
+    {
+      "path": "home/.config/mako/config",
+      "source": "/home/zhuoran/.config/mako/config",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 225,
+      "sha256": "0892bb01e598a0da12759cf23fc52384785b2db25edb83a80a72202f9e77155a"
+    },
+    {
+      "path": "home/.config/waypaper/config.ini",
+      "source": "/home/zhuoran/.config/waypaper/config.ini",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1268,
+      "sha256": "2178afd9cf0d590195f60a29ad199a3cfef00976721844cb24697a36617b32c1"
+    },
+    {
+      "path": "home/.config/matugen/config.toml",
+      "source": "/home/zhuoran/.config/matugen/config.toml",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 4982,
+      "sha256": "289b8d45b7054431aecb9867ff5b763077fac2e6ae025ab81386addf4e7c475d"
+    },
+    {
+      "path": "home/.config/matugen/scripts/inject_vscode.sh",
+      "source": "/home/zhuoran/.config/matugen/scripts/inject_vscode.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 799,
+      "sha256": "8618ef1d4385110d50656bd0187186ef332e41a6ad69aa2e853acd30fb7d03fe"
+    },
+    {
+      "path": "home/.config/matugen/templates/Matugen.colors",
+      "source": "/home/zhuoran/.config/matugen/templates/Matugen.colors",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 6164,
+      "sha256": "5a27de95eb5d96c429afec5d75a49ead3c0cae6b51584b8373d1e7913c4c793a"
+    },
+    {
+      "path": "home/.config/matugen/templates/btop.theme",
+      "source": "/home/zhuoran/.config/matugen/templates/btop.theme",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 3015,
+      "sha256": "47cbe4e3d8dcf84bb1a59a04f351036215a14cf530e35e759bc8d85658b59004"
+    },
+    {
+      "path": "home/.config/matugen/templates/cava-colors.ini",
+      "source": "/home/zhuoran/.config/matugen/templates/cava-colors.ini",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 686,
+      "sha256": "805e9151f514ffe237f99e095b32bdc90ad5c8cec770c0a969421ad8c6b4b7f8"
+    },
+    {
+      "path": "home/.config/matugen/templates/colors.css",
+      "source": "/home/zhuoran/.config/matugen/templates/colors.css",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 139,
+      "sha256": "3b171e167301b7b7d743cbe04fc00dfce847488741ca89b6ad221e33121d0afe"
+    },
+    {
+      "path": "home/.config/matugen/templates/fastfetch-config.jsonc",
+      "source": "/home/zhuoran/.config/matugen/templates/fastfetch-config.jsonc",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4176,
+      "sha256": "24b75100840710e7b6e2561a3278166958288b3fbd36fbdf24ca45a2e5dbe8dc"
+    },
+    {
+      "path": "home/.config/matugen/templates/fcitx5-theme.conf",
+      "source": "/home/zhuoran/.config/matugen/templates/fcitx5-theme.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4760,
+      "sha256": "0c514e9c44eacbbf58e3ae171baf40cdff9b63b42aec6e04005d2995e02c52cc"
+    },
+    {
+      "path": "home/.config/matugen/templates/fuzzel.ini",
+      "source": "/home/zhuoran/.config/matugen/templates/fuzzel.ini",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 648,
+      "sha256": "7e9bf6a1e3cf2b679f56ed8130d7174b43f83aedb450dfe45691fc13ec63a0d2"
+    },
+    {
+      "path": "home/.config/matugen/templates/ghostty-colors.conf",
+      "source": "/home/zhuoran/.config/matugen/templates/ghostty-colors.conf",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 324,
+      "sha256": "06b519a1448720a726ca2a92f1098190966fc1bb07cac150a7986c94f322cdcd"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-colors.css",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-colors.css",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1305,
+      "sha256": "87a5f54407d1897f1894c7bfeb9b4b39c738091a0e471d8d52aef5f555bab0dd"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/index.theme",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/index.theme",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 3328,
+      "sha256": "a25e400f31b9b74ec5b970d94ad14ff37d29287f2fe129f9e710b4345cb66ba0"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/application-x-addon.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/application-x-addon.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4735,
+      "sha256": "f83a53d0315d7d63cfc752c62443a5ad0d4ca49c446cb9d94b3a45a35a196117"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/application-x-executable.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/application-x-executable.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8571,
+      "sha256": "aac059f66ce8647ed57d0960436f3444af81be2afee9cef55327ab7572b90120"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/audio-x-generic.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/audio-x-generic.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4318,
+      "sha256": "f64419304ae5b20929dacc7072711e4f9ba20d8d7354ef941e32c6a29de4c6e5"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/font-x-generic.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/font-x-generic.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1528,
+      "sha256": "1df055ebdee2588dcd8516a25f30f25f7d3f970b2e3191113c4d9baa794f5aef"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/inode-directory.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/inode-directory.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1898,
+      "sha256": "1ad4aea2e388f553fd958fa0ce8120fb80d48319a004d48ce777d89e051c179d"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/text-html.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/text-html.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4258,
+      "sha256": "cbd1ca5d50d0d25bbd56cedbebc69dd6b5e6ea107387fa7411204aa5e4394616"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/text-x-script.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/text-x-script.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8881,
+      "sha256": "67afdc110e12617ad2fb15dffaa5468a15192d6305a3256ef622f6e8b7c7568c"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/x-office-document.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/x-office-document.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 3218,
+      "sha256": "5ac4e698cf7fdc68fd201e492178f7f38979ac3af3ef67768ea023c5738d2c19"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/x-office-presentation.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/mimetypes/x-office-presentation.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4959,
+      "sha256": "a0bc7e36bf7e5826599e5abbab076f1ea287066870551acc422f3a459f3b210b"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-documents.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-documents.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2312,
+      "sha256": "9adc199ee595398be592cc9989bbbc02d8ca42355b18e8e1a6c8cc125abe5b5f"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-download.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-download.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2387,
+      "sha256": "97caa710fd560edb479dfeb8e04fa587ae65504bbe02df6c2fde8a22514e8746"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-drag-accept.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-drag-accept.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1898,
+      "sha256": "1ad4aea2e388f553fd958fa0ce8120fb80d48319a004d48ce777d89e051c179d"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-music.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-music.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2638,
+      "sha256": "4b46e981e7c6e0e9503aed6cd5ca7acbc2c89a66f4a0b62283f08b03fda8201d"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-pictures.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-pictures.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2464,
+      "sha256": "4b36a3dc78d0689537a76bef4380bd6aefd61d93cfea3432b8ed198c064625ed"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-publicshare.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-publicshare.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2670,
+      "sha256": "5776713f288e9c17cfa3afe1a9ea7f16a5cb60c6d4b54571a69356c64ddf2f5b"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-remote.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-remote.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 3846,
+      "sha256": "c8fc5923de2f9cc66a68a773d7cd250d7b0b53c01f01bd132decd746784b8d51"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-templates.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-templates.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2545,
+      "sha256": "490f984055418dafb1c17385e25af6b789da133fe5623572c6b7e31a3fbdbc12"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-videos.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder-videos.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2361,
+      "sha256": "c48f7b4644789ad668e07ec267b45d7bc5aef9dad684bfcd6f5babf25e72c852"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/folder.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1898,
+      "sha256": "1ad4aea2e388f553fd958fa0ce8120fb80d48319a004d48ce777d89e051c179d"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/network-server.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/network-server.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8356,
+      "sha256": "3d27d653a218ef38b2929685e782b378cdf5029ee92df044077f524bf043aba9"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/network-workgroup.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/network-workgroup.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8784,
+      "sha256": "311965cce176a028983d77ee80f8575d4f40036823ccaccfdf2bf6fb8b2da8b1"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/user-bookmarks.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/user-bookmarks.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2451,
+      "sha256": "5155d899e827b6f63582594ef0684c7429bafd75393006f71a04b780dca1cb9f"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/user-desktop.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/user-desktop.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2458,
+      "sha256": "30eb913d230063f1d9b813a77bf5fdfdb05094e2071b985d975550c5ab4693f0"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/user-home.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/user-home.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2608,
+      "sha256": "e1e37072238f2938e71ce7990bb6a551e1f84b5b424bd2cf5847ffb35ff63cc8"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/user-trash.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/places/user-trash.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 6898,
+      "sha256": "2f775224df164249dbf250cf91177c92b55f58e3a366ca9cf134c1390857bed4"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/status/folder-open.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/status/folder-open.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1898,
+      "sha256": "1ad4aea2e388f553fd958fa0ce8120fb80d48319a004d48ce777d89e051c179d"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/status/user-trash-full.svg",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/Adwaita-Matugen/scalable/status/user-trash-full.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 55934,
+      "sha256": "0ec030387477f219992fbb6fe6d739b13bbcc59afb2723e4f6025773434664ae"
+    },
+    {
+      "path": "home/.config/matugen/templates/gtk-folder/recolor.sh",
+      "source": "/home/zhuoran/.config/matugen/templates/gtk-folder/recolor.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 12989,
+      "sha256": "30c6ed4d7d6a6660edd0916501cf18cf9e20bb0faf33933c4188a4e2755128bb"
+    },
+    {
+      "path": "home/.config/matugen/templates/hyprland-colors.conf",
+      "source": "/home/zhuoran/.config/matugen/templates/hyprland-colors.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 96,
+      "sha256": "1f9d1def37ffc104e1fa005eccd5a600f109acb5e4e8d04af477e49c3dec6235"
+    },
+    {
+      "path": "home/.config/matugen/templates/kitty-colors.conf",
+      "source": "/home/zhuoran/.config/matugen/templates/kitty-colors.conf",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 1017,
+      "sha256": "84e8e639066d3c1c73a2370a0c9b04d2b2c3db3b6361e1d3276e4422684bf437"
+    },
+    {
+      "path": "home/.config/matugen/templates/mako-colors.conf",
+      "source": "/home/zhuoran/.config/matugen/templates/mako-colors.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 144,
+      "sha256": "92fdae201121abcd384466a6596e9584bb26206ebf17c20333098e46024321df"
+    },
+    {
+      "path": "home/.config/matugen/templates/neovim/init.lua",
+      "source": "/home/zhuoran/.config/matugen/templates/neovim/init.lua",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2151,
+      "sha256": "39e866a63f75414b864965bb03f26a5f7edbffbe371ef336999d74f60bf6ebb2"
+    },
+    {
+      "path": "home/.config/matugen/templates/neovim/template.lua",
+      "source": "/home/zhuoran/.config/matugen/templates/neovim/template.lua",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2172,
+      "sha256": "0f5ddf06654505b26c94c50dc55453092c485c08a396592aa91948fba8c50723"
+    },
+    {
+      "path": "home/.config/matugen/templates/niri-colors.kdl",
+      "source": "/home/zhuoran/.config/matugen/templates/niri-colors.kdl",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 360,
+      "sha256": "00a92e850d97dfb8e7e3941db4e6ba7500a93e85342d1ba78d2432fae27848af"
+    },
+    {
+      "path": "home/.config/matugen/templates/niriswitcher-colors.css",
+      "source": "/home/zhuoran/.config/matugen/templates/niriswitcher-colors.css",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 3972,
+      "sha256": "059d7f01424608d82dbe83e22d4e95a9e38695c629a0a7a1786ca0a9a6ffaf9f"
+    },
+    {
+      "path": "home/.config/matugen/templates/obs-matugen.obt",
+      "source": "/home/zhuoran/.config/matugen/templates/obs-matugen.obt",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 58067,
+      "sha256": "61a09f2f6513acad1692916b8703cedbaf258e79115f226708c7cb3b9d48b201"
+    },
+    {
+      "path": "home/.config/matugen/templates/pywalfox-colors.json",
+      "source": "/home/zhuoran/.config/matugen/templates/pywalfox-colors.json",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 494,
+      "sha256": "b46b92edd1a38e046855c06b348f20627afafdddcc5f06e6d3bbf698b0ebe5d4"
+    },
+    {
+      "path": "home/.config/matugen/templates/qtct-colors.conf",
+      "source": "/home/zhuoran/.config/matugen/templates/qtct-colors.conf",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 1873,
+      "sha256": "e4b8d11573d80f7ddc41521b992d054c300f370f875843758fa0aa9fa3765f46"
+    },
+    {
+      "path": "home/.config/matugen/templates/starship-colors.toml",
+      "source": "/home/zhuoran/.config/matugen/templates/starship-colors.toml",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 4233,
+      "sha256": "a1f4c5394b78a7699c476f68076750a9273bb33a4a3d3c4ed436267e7d916f4c"
+    },
+    {
+      "path": "home/.config/matugen/templates/steam.css",
+      "source": "/home/zhuoran/.config/matugen/templates/steam.css",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2400,
+      "sha256": "85641ffeafad5d9e5e62ee7923718afe50f788715b96985a26e049748ff62c94"
+    },
+    {
+      "path": "home/.config/matugen/templates/style.css",
+      "source": "/home/zhuoran/.config/matugen/templates/style.css",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 3415,
+      "sha256": "365f96d645b5d25fdcc2e7585f30c805fb45cde25a96ba339ce5208455a895e3"
+    },
+    {
+      "path": "home/.config/matugen/templates/swaylock-colors",
+      "source": "/home/zhuoran/.config/matugen/templates/swaylock-colors",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 741,
+      "sha256": "1f129558b6313830ad7ae1879a2343c377f6a92824c2370bd2909dd318b57a03"
+    },
+    {
+      "path": "home/.config/matugen/templates/swaync-colors.css",
+      "source": "/home/zhuoran/.config/matugen/templates/swaync-colors.css",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 92,
+      "sha256": "d0b280772a1becca149dad464dd01b76fa00ad485a52d610355150dbbd68d28f"
+    },
+    {
+      "path": "home/.config/matugen/templates/vscode-inject.json",
+      "source": "/home/zhuoran/.config/matugen/templates/vscode-inject.json",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8346,
+      "sha256": "26279be7ff33b52566850588916957075dd35f1288d31272cc2f08a4656344b7"
+    },
+    {
+      "path": "home/.config/matugen/templates/wlogout/icons/hibernate.png",
+      "source": "/home/zhuoran/.config/matugen/templates/wlogout/icons/hibernate.png",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 17963,
+      "sha256": "55661f19f6946e1039573b677f02fbf46c37432139b62b8ab3eac7720f19f51a"
+    },
+    {
+      "path": "home/.config/matugen/templates/wlogout/icons/lock.png",
+      "source": "/home/zhuoran/.config/matugen/templates/wlogout/icons/lock.png",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8108,
+      "sha256": "6e504d62653b297819656da222b4f1ce263f5e8c682ac1d194b4418a9a89b87b"
+    },
+    {
+      "path": "home/.config/matugen/templates/wlogout/icons/logout.png",
+      "source": "/home/zhuoran/.config/matugen/templates/wlogout/icons/logout.png",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 6329,
+      "sha256": "656ed813bfc7cd916a6160c1cf9378df56a617b2136444102afc3665189bb67e"
+    },
+    {
+      "path": "home/.config/matugen/templates/wlogout/icons/reboot.png",
+      "source": "/home/zhuoran/.config/matugen/templates/wlogout/icons/reboot.png",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 16483,
+      "sha256": "ebaceab9048a97eb7c252dcea057ff7c4d50443e8bcb8890cdf321a5e89594c9"
+    },
+    {
+      "path": "home/.config/matugen/templates/wlogout/icons/shutdown.png",
+      "source": "/home/zhuoran/.config/matugen/templates/wlogout/icons/shutdown.png",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 15698,
+      "sha256": "579ab61b989c7d3916d3e5c4bf4cbd7305498d437aab4c73f1af3bd85c091c23"
+    },
+    {
+      "path": "home/.config/matugen/templates/wlogout/icons/suspend.png",
+      "source": "/home/zhuoran/.config/matugen/templates/wlogout/icons/suspend.png",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 17256,
+      "sha256": "211520163761e16104fabf5bd5c1b8bcda2222e8dbb7d20c80126fe6f8be430e"
+    },
+    {
+      "path": "home/.config/matugen/templates/wlogout/recolor.sh",
+      "source": "/home/zhuoran/.config/matugen/templates/wlogout/recolor.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 2243,
+      "sha256": "2c9e2dadda0e422ce392964a967c8825bb0b0e8d20b26f771cee39b8859477f6"
+    },
+    {
+      "path": "home/.config/matugen/templates/yazi-theme.toml",
+      "source": "/home/zhuoran/.config/matugen/templates/yazi-theme.toml",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 60154,
+      "sha256": "dc8bfbd5229ba0ff1c1272955cce19873ec3efb11db01a519c2d02ce5ad222bd"
+    },
+    {
+      "path": "home/.config/scripts/matugen-select-type.sh",
+      "source": "/home/zhuoran/.config/scripts/matugen-select-type.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 4978,
+      "sha256": "c3131fe5cbb293441efa9b5709a0a3d1656f009a0a39f133e3edd4e5253fa466"
+    },
+    {
+      "path": "home/.config/scripts/matugen-update.sh",
+      "source": "/home/zhuoran/.config/scripts/matugen-update.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 8127,
+      "sha256": "5bab4c352713d6b8b843d6de4fed68a8099fa322a38d8d57d9fe6ec546f9ec0a"
+    },
+    {
+      "path": "home/.config/scripts/niri_set_overview_blur_dark_bg.sh",
+      "source": "/home/zhuoran/.config/scripts/niri_set_overview_blur_dark_bg.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 10502,
+      "sha256": "07d5d4762e8af67df3cf3d1759c7970b0aa360baa61663ef7aa2717d9664005b"
+    },
+    {
+      "path": "home/.config/scripts/random-anime-wallpaper.sh",
+      "source": "/home/zhuoran/.config/scripts/random-anime-wallpaper.sh",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 4816,
+      "sha256": "1512d8f029b6254e711b7e1d87daf0aabf023793fa54287a290c1586a834b6e9"
+    },
+    {
+      "path": "home/.config/fuzzel/colors.ini",
+      "source": "/home/zhuoran/.config/fuzzel/colors.ini",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 253,
+      "sha256": "e61ceefa7e7d43c0718ae7fdfc42a4a83b0bf61dfabd1bf41bbd958f1da4c12e"
+    },
+    {
+      "path": "home/.config/fuzzel/fuzzel.ini",
+      "source": "/home/zhuoran/.config/fuzzel/fuzzel.ini",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 2910,
+      "sha256": "6d7a129ae64fc8f5c1f48555945ded5eb3e0946b587345ee60fb4f4e5a01b7d8"
+    },
+    {
+      "path": "home/.config/fuzzel/scripts/fuzzel-web-search",
+      "source": "/home/zhuoran/.config/fuzzel/scripts/fuzzel-web-search",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 3101,
+      "sha256": "a3e2c72e0a3ad3f9651f63afedc889afc9a2a30d240149fb59c6eb0bf04adf97"
+    },
+    {
+      "path": "home/.config/kitty/current-theme.conf",
+      "source": "/home/zhuoran/.config/kitty/current-theme.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 667,
+      "sha256": "2eb60cceb6113776659d48aaeb40da3f14f1bb4d78d718150932902e5f3b0b71"
+    },
+    {
+      "path": "home/.config/kitty/kitty.conf",
+      "source": "/home/zhuoran/.config/kitty/kitty.conf",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 1147,
+      "sha256": "87cb86c1c4011d97cdaba9e18cdcc4e8530a48b19cbf973875d06b9927c6912d"
+    },
+    {
+      "path": "home/.config/kitty/kitty.conf.bak-20260915-164918",
+      "source": "/home/zhuoran/.config/kitty/kitty.conf.bak-20260915-164918",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 351,
+      "sha256": "c354e3bdaf27926ee6aa096011573ef8fda5ca5567ea6ef4503ba4ab22921c0f"
+    },
+    {
+      "path": "home/.config/kitty/themes/matugen.conf",
+      "source": "/home/zhuoran/.config/kitty/themes/matugen.conf",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 667,
+      "sha256": "8507caa6cd7985737ead3ad52c701b9caec63535791663fa71767ce4a373fec2"
+    },
+    {
+      "path": "home/.config/gtk-3.0/colors.css",
+      "source": "/home/zhuoran/.config/gtk-3.0/colors.css",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 820,
+      "sha256": "7cece4281809c664385c16a303c6967ef2e197d3d348e4f73d18f8b8cf0b46ea"
+    },
+    {
+      "path": "home/.config/gtk-3.0/settings.ini",
+      "source": "/home/zhuoran/.config/gtk-3.0/settings.ini",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 32,
+      "sha256": "5b0541248226a8c3fc2e58e2e21d9875bd4df1a2fa1df14cd316ce86f6eeb946"
+    },
+    {
+      "path": "home/.config/gtk-4.0/colors.css",
+      "source": "/home/zhuoran/.config/gtk-4.0/colors.css",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 820,
+      "sha256": "7cece4281809c664385c16a303c6967ef2e197d3d348e4f73d18f8b8cf0b46ea"
+    },
+    {
+      "path": "home/.config/gtk-4.0/gtk.css",
+      "source": "/home/zhuoran/.config/gtk-4.0/gtk.css",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 27,
+      "sha256": "41a3398dd967b3fa554a8572e7b60fd82b3284b5175d3a6270ef8d19ded048cc"
+    },
+    {
+      "path": "home/.config/gtk-4.0/settings.ini",
+      "source": "/home/zhuoran/.config/gtk-4.0/settings.ini",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 32,
+      "sha256": "5b0541248226a8c3fc2e58e2e21d9875bd4df1a2fa1df14cd316ce86f6eeb946"
+    },
+    {
+      "path": "home/.config/swaylock/config",
+      "source": "/home/zhuoran/.config/swaylock/config",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 89,
+      "sha256": "bf981016191f07084da955ffc96cfc817bd798ffc2881fad0d470fc98e84d826"
+    },
+    {
+      "path": "home/.config/swayosd/colors.css",
+      "source": "/home/zhuoran/.config/swayosd/colors.css",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2249,
+      "sha256": "df0b4c7882a98e559b9145e413f6f6957693e56fc6b340d2e6defc2f8e1aeef5"
+    },
+    {
+      "path": "home/.config/swayosd/style.css",
+      "source": "/home/zhuoran/.config/swayosd/style.css",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 731,
+      "sha256": "bc8dd91919f277ba60bef0166f3cae93544dd11c7dc10afb842f7b9d1bfb411f"
+    },
+    {
+      "path": "home/.config/holo-power-mode/firefox-gpu",
+      "source": "/home/zhuoran/.config/holo-power-mode/firefox-gpu",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 11,
+      "sha256": "ccdce21e67563fd0bea69e9b75e9f41fff8c9f98227dac88c70ff660933cab09"
+    },
+    {
+      "path": "home/.config/xdg-desktop-portal/niri-portals.conf",
+      "source": "/home/zhuoran/.config/xdg-desktop-portal/niri-portals.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 302,
+      "sha256": "b986ffe409451184b704cf3157445fef56e2890105f80ecb0ff2643c79adc055"
+    },
+    {
+      "path": "home/.config/fcitx5/conf/chttrans.conf",
+      "source": "/home/zhuoran/.config/fcitx5/conf/chttrans.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 198,
+      "sha256": "34cb66739f5b0bb6aa1952472da932974bd5f1e725676c13c06b0adff56e86ea"
+    },
+    {
+      "path": "home/.config/fcitx5/conf/classicui.conf",
+      "source": "/home/zhuoran/.config/fcitx5/conf/classicui.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 872,
+      "sha256": "9902a537c12ea57e7b3eef66c8f1519ad395dcebe7d4f1fbec61c071060c6e7e"
+    },
+    {
+      "path": "home/.config/fcitx5/conf/notifications.conf",
+      "source": "/home/zhuoran/.config/fcitx5/conf/notifications.conf",
+      "type": "file",
+      "mode": "0o600",
+      "bytes": 47,
+      "sha256": "9ad16184fc23e3f4fa24487005573255e126b7d6d50a0dc98e073788053292f9"
+    },
+    {
+      "path": "home/.config/fcitx5/conf/pinyin.conf",
+      "source": "/home/zhuoran/.config/fcitx5/conf/pinyin.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2831,
+      "sha256": "33a323762cea7898afc853dc5c888cc6899fbcabc0617f8beff2b4654a883cec"
+    },
+    {
+      "path": "home/.config/fcitx5/conf/punctuation.conf",
+      "source": "/home/zhuoran/.config/fcitx5/conf/punctuation.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 213,
+      "sha256": "912c05ed8ecb9deb97a4717f723bdf256bd4b8e16c744d51f0290d6973c38409"
+    },
+    {
+      "path": "home/.config/fcitx5/config",
+      "source": "/home/zhuoran/.config/fcitx5/config",
+      "type": "file",
+      "mode": "0o600",
+      "bytes": 1749,
+      "sha256": "8aafacf5090aa60c383ee3904c72a602d22100b3784e5b3d10d41bf976d40745"
+    },
+    {
+      "path": "home/.config/fcitx5/profile",
+      "source": "/home/zhuoran/.config/fcitx5/profile",
+      "type": "file",
+      "mode": "0o600",
+      "bytes": 244,
+      "sha256": "cb273af1b1b36518b29151e0f20c8f2aa0300af4965fc560fbe1beb485523999"
+    },
+    {
+      "path": "home/.config/fontconfig/fonts.conf",
+      "source": "/home/zhuoran/.config/fontconfig/fonts.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1271,
+      "sha256": "e3c520d7c5463ebc29854305c469ab12bb6dfbdce843ed5e9786b9f662cc64bd"
+    },
+    {
+      "path": "home/.config/btop/btop.conf",
+      "source": "/home/zhuoran/.config/btop/btop.conf",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 9824,
+      "sha256": "101bf7beb150affaeffd8c95c2c297c4310d5e4a9f821dd97e39c225b4d96174"
+    },
+    {
+      "path": "home/.config/btop/themes/matugen.theme",
+      "source": "/home/zhuoran/.config/btop/themes/matugen.theme",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2203,
+      "sha256": "31cff9b5369d7f6b2a30e161a8d63e00b2576577ba52bfc70ad3644ce669c93b"
+    },
+    {
+      "path": "home/.config/cava/config",
+      "source": "/home/zhuoran/.config/cava/config",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 11825,
+      "sha256": "397a6374e15215a922ba1e75b86f853abf7f423542aee0bdb7ea2d19d19a001a"
+    },
+    {
+      "path": "home/.config/cava/shaders/bar_spectrum.frag",
+      "source": "/home/zhuoran/.config/cava/shaders/bar_spectrum.frag",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2524,
+      "sha256": "93b37f029b0107200598bfc3da3b7eeafeb84709a26372856281c67eb68e3917"
+    },
+    {
+      "path": "home/.config/cava/shaders/eye_of_phi.frag",
+      "source": "/home/zhuoran/.config/cava/shaders/eye_of_phi.frag",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4459,
+      "sha256": "6c8cdc5f402dd03b30fbf608892b93583cbc79cb7b11dc1d3c5fca85a71a50ab"
+    },
+    {
+      "path": "home/.config/cava/shaders/northern_lights.frag",
+      "source": "/home/zhuoran/.config/cava/shaders/northern_lights.frag",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1009,
+      "sha256": "6f1db345afb41b08d1dc91e2b5624bdf2779c35a12efac5e2ab7c0b324360971"
+    },
+    {
+      "path": "home/.config/cava/shaders/orion_circle.frag",
+      "source": "/home/zhuoran/.config/cava/shaders/orion_circle.frag",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 7550,
+      "sha256": "5c383bff09a5680f88610de14ffcc1549e7d1502b40b3482c600ae2a942c9264"
+    },
+    {
+      "path": "home/.config/cava/shaders/orion_circle_rotate.frag",
+      "source": "/home/zhuoran/.config/cava/shaders/orion_circle_rotate.frag",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8616,
+      "sha256": "c541f1b3fca67852eb0f6b7b708d303c6e93323f8c973556e1e50941168e7028"
+    },
+    {
+      "path": "home/.config/cava/shaders/orion_saturn_core.frag",
+      "source": "/home/zhuoran/.config/cava/shaders/orion_saturn_core.frag",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 9140,
+      "sha256": "08cf9fbd9f8dd9dcc7cee0d89a9602c0dcb575276c20d4c4d01e05f2a228bc78"
+    },
+    {
+      "path": "home/.config/cava/shaders/orion_saturn_subring.frag",
+      "source": "/home/zhuoran/.config/cava/shaders/orion_saturn_subring.frag",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 9310,
+      "sha256": "659cada4bd26c346e2c46af9db18cb22cdfd11ce5ec1c17b26c4629b93397944"
+    },
+    {
+      "path": "home/.config/cava/shaders/pass_through.vert",
+      "source": "/home/zhuoran/.config/cava/shaders/pass_through.vert",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 350,
+      "sha256": "d9e701d971a32a1c8a459c0f08e2e0c7fbedb3eccd9bfe428bd7e60160cf1c77"
+    },
+    {
+      "path": "home/.config/cava/shaders/spectrogram.frag",
+      "source": "/home/zhuoran/.config/cava/shaders/spectrogram.frag",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1665,
+      "sha256": "b4a2397328ce5d085059335428147667d4d626c4a99c54a2f7ff0421e5d74b0a"
+    },
+    {
+      "path": "home/.config/cava/shaders/winamp_line_style_spectrum.frag",
+      "source": "/home/zhuoran/.config/cava/shaders/winamp_line_style_spectrum.frag",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2878,
+      "sha256": "8f303c908f8396a9cde55e6290e49359755f6bad6c200f22d53f22a912e6660b"
+    },
+    {
+      "path": "home/.config/cava/themes/solarized_dark",
+      "source": "/home/zhuoran/.config/cava/themes/solarized_dark",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 323,
+      "sha256": "e07846878c0d8693073efa988ccbf9f60ded9b9971df971a374ad954f7ad3314"
+    },
+    {
+      "path": "home/.config/cava/themes/tricolor",
+      "source": "/home/zhuoran/.config/cava/themes/tricolor",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 351,
+      "sha256": "92b06d28df0d91174ab85e89d2c2aceb91eebd66bd793ffac9f0bbe97666505c"
+    },
+    {
+      "path": "home/.config/cava/themes/your-theme",
+      "source": "/home/zhuoran/.config/cava/themes/your-theme",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 423,
+      "sha256": "a88221b398af08c8cbab7ccac2a276fc19bee8635730a5a0a8c90cbb77019bfc"
+    },
+    {
+      "path": "home/.config/yazi/theme.toml",
+      "source": "/home/zhuoran/.config/yazi/theme.toml",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 41563,
+      "sha256": "e4edbb56a370ef7b0b65a08bd82772a48590644895c57b2c9832ac0b25aaf438"
+    },
+    {
+      "path": "home/.config/fastfetch/config.jsonc",
+      "source": "/home/zhuoran/.config/fastfetch/config.jsonc",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 3204,
+      "sha256": "92270eb69857d092a34b1bb63c4282f52e2f828c450643c20c1c903347935503"
+    },
+    {
+      "path": "home/.config/starship.toml",
+      "source": "/home/zhuoran/.config/starship.toml",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 3909,
+      "sha256": "a187b8c17a329fe77fe5ca79c08bcb59d136f3b29f5db8586fb5e598241b2a89"
+    },
+    {
+      "path": "home/.config/systemd/user/niri.service.d/10-system-egl-vendors.conf",
+      "source": "/home/zhuoran/.config/systemd/user/niri.service.d/10-system-egl-vendors.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 129,
+      "sha256": "b1575d88393af6597b0cfd6a9130497a00169e711e0e30a870c89ba4290ce935"
+    },
+    {
+      "path": "home/.local/share/fcitx5/themes/Matugen/theme.conf",
+      "source": "/home/zhuoran/.local/share/fcitx5/themes/Matugen/theme.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4422,
+      "sha256": "9644bb70e12d77a7f825acae9678fb37ead44e4ce89909abe47bf0a65b0ea751"
+    },
+    {
+      "path": "home/.local/share/applications/firefox.desktop",
+      "source": "/home/zhuoran/.local/share/applications/firefox.desktop",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 33643,
+      "sha256": "c2f220524c4c0289947e9dc716735a5afb7ab9a05d75b72702a28dc03e64e538"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/index.theme",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/index.theme",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 3330,
+      "sha256": "ce5d31426e3eb7dabcc1f5c3cc90ec03690ed7d3688b74c9c0255059fb36ede7"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/application-x-addon.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/application-x-addon.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4735,
+      "sha256": "528269d3fd9bf2c4e9440e2fe2c22778a6dca6f3a7347c4a8cf8e4d6d869a4ed"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/application-x-executable.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/application-x-executable.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8571,
+      "sha256": "ef1606ce5ea9d66a31bcb574274b6bce6244ffa50a43bbbc9dfd8fc05cf4d788"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/audio-x-generic.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/audio-x-generic.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4318,
+      "sha256": "e9b34068eeb03c454f238387e1729d57ba1f8b112ec52e836e373a724e9ec723"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/font-x-generic.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/font-x-generic.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1528,
+      "sha256": "ba017a2ace1e7cf3d3a5bdcb37e426e29bb25b737db3e117891fafd5f2643515"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/inode-directory.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/inode-directory.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1898,
+      "sha256": "19e3439a796002c07ef8589b4791ac52266494fa13786ecaa7a19026edb8b3a1"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/text-html.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/text-html.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4258,
+      "sha256": "a2988ff21c226b702fb5a2e092f9ea84471668143242c61426cf1b422741e981"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/text-x-script.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/text-x-script.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8881,
+      "sha256": "71020b4552e45d62cff1a819b9bfd5a7b99321636db871fa55e34a7f16f7769d"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/x-office-document.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/x-office-document.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 3218,
+      "sha256": "2a4be32686dfcfa62de1fe679ac94ec6dd3507aa04653a7d37792edfca36315a"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/x-office-presentation.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/mimetypes/x-office-presentation.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4959,
+      "sha256": "79006ea6970513d7674015b6f849161e6779c100451166408de4d3d4d36ce6b8"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-documents.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-documents.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2312,
+      "sha256": "5ca674fb38e0865d6a8b48a4133a969d67df4e81cf40c0e1041733283d1d5943"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-download.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-download.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2387,
+      "sha256": "50e720709055517893ce3094f8a3c187723433359665606e9d679b0b340aeb0e"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-drag-accept.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-drag-accept.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1898,
+      "sha256": "19e3439a796002c07ef8589b4791ac52266494fa13786ecaa7a19026edb8b3a1"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-music.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-music.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2638,
+      "sha256": "6e5895d2ebf243fb5341908a12e611469e567384f5f82e40be610fedfe5f2006"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-pictures.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-pictures.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2464,
+      "sha256": "82649b41947e2690c93c8bb29a4636752f8433ae5196fb3e0f79c98b6f89052b"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-publicshare.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-publicshare.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2670,
+      "sha256": "d199b9d8bbfb9fc89728ed1dfc97d24b7587d7eeeb5eadb102bee0eff71eac88"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-remote.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-remote.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 3846,
+      "sha256": "87d8ccdc3832080320280b2970155cfb306b2ace6aef2fc69f96fa82d14f0dca"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-templates.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-templates.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2545,
+      "sha256": "68aef6b9c40c49273e4e4af3ee106966c6837de1d4d1bffa58b6867e6d84a6af"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-videos.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder-videos.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2361,
+      "sha256": "930ea4ee0bf68a8eb2d162ca81a9c01edbdac36ff8325c32a64f9bf90dc9fad9"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/folder.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1898,
+      "sha256": "19e3439a796002c07ef8589b4791ac52266494fa13786ecaa7a19026edb8b3a1"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/network-server.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/network-server.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8356,
+      "sha256": "08dc3ed16e594b72eb33e5494d9275f10c55c24964933fd2119fa277e6bf4a8a"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/network-workgroup.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/network-workgroup.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8784,
+      "sha256": "8f2821099a00635870adb13c8739105a07950120496ee6d08b5100a233660f71"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/user-bookmarks.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/user-bookmarks.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2451,
+      "sha256": "ecdfef4babdf098ffe16d0dfc33733f40f797c6348de4f2e6381657d14cc5c9d"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/user-desktop.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/user-desktop.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2458,
+      "sha256": "e6e2981280625bfe461650d88bc175a6e3a1086885f69f0efff1411fb40056cd"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/user-home.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/user-home.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2608,
+      "sha256": "a1a24794c07b6f86f9dc089e7ca318806a61e3e8f216aa0f29d9e3a3b9baeb58"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/places/user-trash.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/places/user-trash.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 6898,
+      "sha256": "e5d371b31a19da7d5cd1886e4bea1c15708ccd6fb091636f0cd9234f39791f41"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/status/folder-open.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/status/folder-open.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1898,
+      "sha256": "19e3439a796002c07ef8589b4791ac52266494fa13786ecaa7a19026edb8b3a1"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-A/scalable/status/user-trash-full.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-A/scalable/status/user-trash-full.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 55934,
+      "sha256": "de9f9bea68061e8b254956d038acbd3b8be9e80d499a31ea5eb98de254222408"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/index.theme",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/index.theme",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 3330,
+      "sha256": "387ca9016f4679c0f9869d84b71f497d35800849d5838ae5afd262447901fde2"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/application-x-addon.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/application-x-addon.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4735,
+      "sha256": "f871217351f9a4082a748f68028d13b06c8d199db34bc6296e09c33e754c1951"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/application-x-executable.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/application-x-executable.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8571,
+      "sha256": "eb8be54ea7d73c6cc1cafc7688a2f057c46147b82b0af3dad34e656de44fdfbe"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/audio-x-generic.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/audio-x-generic.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4318,
+      "sha256": "6892995b4bbdb309adb9bff6946cd8d4ef6abf45aa5f0413ec6deef069dac46c"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/font-x-generic.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/font-x-generic.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1528,
+      "sha256": "37ebaa7e93e56d409ecba52d023bca833fa9904342c592afb6b21d8ad58e1b68"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/inode-directory.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/inode-directory.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1898,
+      "sha256": "d301e833fc75d1a4f4e378bda19d37a7eb3d27f07a5fc5685b5d080c80a51fce"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/text-html.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/text-html.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4258,
+      "sha256": "80b589a6a2fcb952ab42ac698bb70923fb66aaaa5ee4183047656efb48e18969"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/text-x-script.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/text-x-script.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8881,
+      "sha256": "33f44b0d508fe67aac9194c9ca475f1d5b8e0775c02fbe63145cd67b089fbbe9"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/x-office-document.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/x-office-document.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 3218,
+      "sha256": "238d8ecbf0c8eedaa4e59fcff96ecf7dcb06c95584cea770e12bda338634cbab"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/x-office-presentation.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/mimetypes/x-office-presentation.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 4959,
+      "sha256": "bfe93ffbe3ec3cbab1851bf43bc8082e63c84cb69c0dd6747db45b3596c61609"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-documents.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-documents.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2312,
+      "sha256": "9a67a44619af3659e03ddf0f624d1a16b8a6537bb6b80571d6be98588fc507db"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-download.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-download.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2387,
+      "sha256": "b3a7f70cc101a099c626571531f1b102fab3b3d54711d2419fe16e3a5c11c8ec"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-drag-accept.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-drag-accept.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1898,
+      "sha256": "d301e833fc75d1a4f4e378bda19d37a7eb3d27f07a5fc5685b5d080c80a51fce"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-music.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-music.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2638,
+      "sha256": "77462dcb5d12b74df437d8bc334eb3b9937ed49e46dfe03c62cfb659cabf1d5e"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-pictures.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-pictures.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2464,
+      "sha256": "9884c537de04aeb2c46cecad1f439e2b59c74ba9b3c236e0edc13b8f71f7a381"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-publicshare.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-publicshare.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2670,
+      "sha256": "08f17fd53ce4c5681e97a3e13c1245ecaeffd2f4a0f67d37fdce5111e88d73c0"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-remote.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-remote.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 3846,
+      "sha256": "d429bf5e244389de707eaae934a6cccf25512e4d8590c836fbc6d755b7788652"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-templates.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-templates.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2545,
+      "sha256": "6de3f81d6fa3f784210dfab7c0aab451408f0964991b2f1d670840e19b393bb3"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-videos.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder-videos.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2361,
+      "sha256": "fb1ec18b87caff16c53e66a87e8314803926217da272ff7e5cde51554000735e"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/folder.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1898,
+      "sha256": "d301e833fc75d1a4f4e378bda19d37a7eb3d27f07a5fc5685b5d080c80a51fce"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/network-server.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/network-server.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8356,
+      "sha256": "cee84627a7a75c689f059516fb4ecc7c3f388d69835e53ce66331970b92eb544"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/network-workgroup.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/network-workgroup.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 8784,
+      "sha256": "7d043319920d2ea6ced0f1b521fe037d1b35a14740d4163b5cfc659b6461b1b5"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/user-bookmarks.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/user-bookmarks.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2451,
+      "sha256": "6e8e7ad7b9039e5287e1b82b8e134ba1b09b19b814d75ee2d8409624872b1df3"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/user-desktop.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/user-desktop.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2458,
+      "sha256": "827a1e34a5fbf5673de5771363c797dd58d041ec77939bf9b2cb794f7c1f612c"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/user-home.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/user-home.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 2608,
+      "sha256": "4e94ceb4b1a43b2cececf5ca738a49387ce645d37eba1ed4cca2ac703dc2e1ac"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/places/user-trash.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/places/user-trash.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 6898,
+      "sha256": "9f181f8ebc89a42d27a63c412f590b5f83f499cf41d1ed78a2546510d6e88284"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/status/folder-open.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/status/folder-open.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 1898,
+      "sha256": "d301e833fc75d1a4f4e378bda19d37a7eb3d27f07a5fc5685b5d080c80a51fce"
+    },
+    {
+      "path": "home/.local/share/icons/Adwaita-Matugen-B/scalable/status/user-trash-full.svg",
+      "source": "/home/zhuoran/.local/share/icons/Adwaita-Matugen-B/scalable/status/user-trash-full.svg",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 55934,
+      "sha256": "4ac8cd23ba2c19be0df6d8e1c6656ca83de38c50c2cfaeb57372a5c1d96d733e"
+    },
+    {
+      "path": "home/.local/bin/holoarch",
+      "source": "/home/zhuoran/.local/bin/holoarch",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 6294,
+      "sha256": "f4fa20f5478948914d6b5883e665781b7ca6dcb278e013ac95d005e37dadace2"
+    },
+    {
+      "path": "home/.local/bin/holoarch-clipboard",
+      "source": "/home/zhuoran/.local/bin/holoarch-clipboard",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 400,
+      "sha256": "c207e1dba91db1cb174fe524851c3d1bf3784f6bd0afcef5fb0864bc4aac8e0e"
+    },
+    {
+      "path": "home/.local/bin/firefox",
+      "source": "/home/zhuoran/.local/bin/firefox",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 1266,
+      "sha256": "a92ac2d48eb3cda4469ebcf0c82b6f02bdd2f4ae17b2c11e3e97e59917670720"
+    },
+    {
+      "path": "home/.local/bin/toggle-wlsunset",
+      "source": "/home/zhuoran/.local/bin/toggle-wlsunset",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 1021,
+      "sha256": "8ac803bcb2bebc43cc2916e3220177043dda634cf1efb0911a2b4e668393fd8b"
+    },
+    {
+      "path": "home/.local/bin/clip-image-paste",
+      "source": "/home/zhuoran/.local/bin/clip-image-paste",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 1103,
+      "sha256": "3dc897260c4294079ad91096a09685438b4fd92fde622624de566ead62bdb481"
+    },
+    {
+      "path": "home/.local/bin/matugen-update",
+      "source": "/home/zhuoran/.local/bin/matugen-update",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 6342,
+      "sha256": "577fa945c2a80307b91370486e659005fcae6da4accf9755eef33eb8d9869f89"
+    },
+    {
+      "path": "system/usr/local/libexec/holo-power-gpu",
+      "source": "/usr/local/libexec/holo-power-gpu",
+      "type": "file",
+      "mode": "0o755",
+      "bytes": 4845,
+      "sha256": "d48cc1f73a0f383507bb1c28c7a3bf6c4d09924cb65f14fcded886dca001edc3"
+    },
+    {
+      "path": "system/etc/systemd/system/holo-power-mode-restore.service",
+      "source": "/etc/systemd/system/holo-power-mode-restore.service",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 302,
+      "sha256": "972d0c854e9ca69f7897d93ad815e1b80623c0080bd71347a152f2a9b8b7ed45"
+    },
+    {
+      "path": "system/etc/systemd/system/power-profiles-daemon.service.d/10-holo-power-mode.conf",
+      "source": "/etc/systemd/system/power-profiles-daemon.service.d/10-holo-power-mode.conf",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 306,
+      "sha256": "65df375f6d20b252e43e5e285d28593636c17f3d70d230a3e25843744b934397"
+    },
+    {
+      "path": "system/etc/systemd/system/multi-user.target.wants/holo-power-mode-restore.service",
+      "source": "/etc/systemd/system/multi-user.target.wants/holo-power-mode-restore.service",
+      "type": "symlink",
+      "mode": "0o777",
+      "bytes": 51,
+      "sha256": "9bab450fb91bcc7d2ff1cae9927ac175a3eaa864abeab398cf7bef0287d73b88"
+    },
+    {
+      "path": "system/var/lib/holo-power-mode/desired",
+      "source": "/var/lib/holo-power-mode/desired",
+      "type": "file",
+      "mode": "0o644",
+      "bytes": 9,
+      "sha256": "82e4dbe76a1c3eac500637965138b6b26d7950e4886143d29913f7cc18343d04"
+    }
+  ],
+  "excluded_from_public": [
+    {
+      "path": "home/.config/gtk-3.0/bookmarks",
+      "reason": "personal GTK bookmarks"
+    },
+    {
+      "path": "home/.config/fcitx5/conf/cached_layouts",
+      "reason": "input method cache"
+    }
+  ],
+  "private_archive_sha256": "291c2e1f273abf84814203318666750a8f10cc7cfb593b789fec064b85a5bdbd"
+}

@@ -1,0 +1,12 @@
+[Unit]
+Description=Restore Holo laptop platform and GPU mode
+After=power-profiles-daemon.service
+Wants=power-profiles-daemon.service
+ConditionPathExists=/var/lib/holo-power-mode/desired
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/libexec/holo-power-gpu --restore
+
+[Install]
+WantedBy=multi-user.target
