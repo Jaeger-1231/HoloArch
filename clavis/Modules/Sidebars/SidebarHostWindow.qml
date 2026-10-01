@@ -12,6 +12,7 @@ import qs.Widgets.common
 PanelWindow {
     id: root
 
+    property var initialScreen: null
     property string lastOpenedSidebar: "dashboard"
     property string openingScreenName: ""
     readonly property bool sameEdge: PersonalizationConfig.sidebarPositions.dashboard
@@ -148,8 +149,9 @@ PanelWindow {
     }
 
     Component.onCompleted: {
-        if (root.fallbackScreen)
-            root.retainedScreenName = root.fallbackScreen.name;
+        const initial = root.initialScreen || root.fallbackScreen;
+        if (initial)
+            root.retainedScreenName = initial.name;
         WidgetState.sidebarScreenName = root.screen ? root.screen.name : "";
         root.reconcileSidebars();
     }

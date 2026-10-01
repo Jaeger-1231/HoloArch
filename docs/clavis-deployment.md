@@ -55,6 +55,16 @@ Fastfetch 使用作者另一个仓库 [StatIndet/dotfiles 的原配置](https://
 
 内屏刷新率固定为支持的 `2560x1600@165.002`，写入 `~/.config/niri/output.kdl`，按 `Tianma Microelectronics Ltd. 0x2031 Unknown` 硬件名称匹配。内屏首选模式为 60.001Hz，原先没有指定模式时 niri 自动选择了它；现已核对实际模式 165.002Hz，Fastfetch 显示 165Hz。
 
+## 面板与总览效果（2026-10-02）
+
+Clavis 面板背景不透明度为 **78%**，开启背景模糊，关闭“仅模糊壁纸”，使侧栏能模糊底下的窗口。文字、按钮和内部卡片保持原来的对比度。打开快捷设置：`Win+Ctrl+Q`；信息侧栏：`Win+Ctrl+N`。设置里的“通用 → 透明与模糊”可自行调整；实际保存位置为 `~/.config/clavis/config.json` 的 `effects`。
+
+Quickshell 0.3.1 的 PanelWindow 换屏后会丢失背景效果连接。本机的 `SidebarHost.qml` 在目标屏幕变化时重建侧栏窗口，保留打开状态和选中的视图；新窗口从创建时就固定在目标屏幕。模糊继续由 Clavis 提交实际显示区域，不对整个屏幕强制模糊。
+
+总览沿用当前壁纸，模糊强度 **40%**、暗化 **30%**，保存于 `wallpaper.overview`。在“壁纸 → 总览 → 图片效果”中修改。niri 通过 `clavis/effects.kdl` 连接面板效果；该片段由 Clavis 自身管理。
+
+应用菜单规则在 `~/.config/niri/blur.kdl`：Nautilus 使用实际 ID `org.gnome.Nautilus`，主窗口不透明，Wayland 菜单不透明度 94%、圆角 12；Thunar 菜单使用 6 像素圆角。Kitty、Firefox、微信及 v2rayN 的菜单保持不透明。该规则只影响原生 `xdg-popup`，应用内部绘制的菜单与 Fcitx 输入法候选框仍由其自身主题管理。[niri 弹窗规则说明](https://niri-wm.github.io/niri/Configuration%3A-Window-Rules.html#popups)。
+
 ## 微信候选框背景修复（2026-10-02）
 
 微信 4.1.13.23 内置 Qt 5.15.14，通过 Fcitx 的客户端接口绘制候选框；Kitty 使用 Wayland 输入法接口。相同主题在微信中出现灰色渐变背景。关闭微信的 niri Xray 无效，已撤回该探针；独立系统 Qt 输入框显示正常。

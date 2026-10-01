@@ -129,7 +129,7 @@ Item {
 
     RegionSelector {}
 
-    SidebarHostWindow {
+    SidebarHost {
         id: sidebarHost
     }
 

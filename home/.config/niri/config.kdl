@@ -237,3 +237,7 @@ debug {
 	// 唤醒时重新初始化显示输出，规避恢复后的黑屏/损坏画面。
 	force-disable-connectors-on-resume
 }
+
+include "clavis/binds.kdl";
+
+include "clavis/effects.kdl";
