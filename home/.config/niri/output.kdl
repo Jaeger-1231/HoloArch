@@ -1,0 +1,5 @@
+// Match the built-in panel by hardware identity across GPU/connector changes.
+// Supported mode reported by niri; the panel defaults to 60Hz otherwise.
+output "Tianma Microelectronics Ltd. 0x2031 Unknown" {
+    mode "2560x1600@165.002"
+}

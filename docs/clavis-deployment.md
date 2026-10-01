@@ -51,7 +51,9 @@ Fastfetch 使用作者另一个仓库 [StatIndet/dotfiles 的原配置](https://
 
 修改 Fastfetch 布局时编辑 `~/.config/matugen/templates/fastfetch-config.jsonc` 并同步到 `~/.config/fastfetch/config.jsonc`，避免下次调色覆盖。
 
-改提示符布局时编辑 `~/.config/matugen/templates/starship-colors.toml` 并同步 `~/.config/starship.toml`。终端改动前的完整本机归档位于 `~/.local/state/holoarch/backups/20261001-215045-pre-terminal/`。已验收提示符的 home Snapper **#920** 继续保留；初版 Fastfetch 的 home Snapper **#921** 和 Git bundle 继续保留；包含随机图片渲染器的 home Snapper **#923**（`holoarch-fastfetch-random-20261001-232922`）已创建并核对，无自动清理规则。最终 Git bundle 保存在 `~/.local/state/holoarch/backups/20261001-232922-fastfetch-random-ready/`；截图只保留本机。
+改提示符布局时编辑 `~/.config/matugen/templates/starship-colors.toml` 并同步 `~/.config/starship.toml`。终端改动前的完整本机归档位于 `~/.local/state/holoarch/backups/20261001-215045-pre-terminal/`。已验收提示符的 home Snapper **#920** 继续保留；初版 Fastfetch 的 home Snapper **#921** 和 Git bundle 继续保留；随机图片渲染器的 home Snapper **#923** 和 Git bundle 继续保留；包含内屏 165Hz 设置的最终 home Snapper **#924**（`holoarch-terminal-165hz-20261001-233251`）已创建并核对，无自动清理规则。最终 Git bundle 保存在 `~/.local/state/holoarch/backups/20261001-233251-terminal-165hz-ready/`；截图只保留本机。
+
+内屏刷新率固定为支持的 `2560x1600@165.002`，写入 `~/.config/niri/output.kdl`，按 `Tianma Microelectronics Ltd. 0x2031 Unknown` 硬件名称匹配。内屏首选模式为 60.001Hz，原先没有指定模式时 niri 自动选择了它；现已核对实际模式 165.002Hz，Fastfetch 显示 165Hz。
 
 ## 验收与保留项
 

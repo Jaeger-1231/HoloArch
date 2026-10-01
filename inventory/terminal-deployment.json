@@ -28,15 +28,16 @@
     "referenceFastfetchVisual": "passed",
     "freshKittyAutomaticFastfetch": "Final renderer verified with random portrait and clean prompt",
     "previewEnvironment": "Agent NO_COLOR removed for the preview; user environment unchanged.",
-    "randomFastfetch": "Fresh Kitty auto and actual fa verified; no immediate repeats; image height matches 24 information rows; source hashes unchanged."
+    "randomFastfetch": "Fresh Kitty auto and actual fa verified; no immediate repeats; image height matches 24 information rows; source hashes unchanged.",
+    "builtInRefreshRate": "niri 165002 mHz and actual fa 165Hz verified; output config valid"
   },
   "postDeploymentSnapshot": {
     "config": "home",
-    "number": 923,
-    "description": "holoarch-fastfetch-random-20261001-232922",
+    "number": 924,
+    "description": "holoarch-terminal-165hz-20261001-233251",
     "cleanup": ""
   },
-  "localPostChangeBackup": "~/.local/state/holoarch/backups/20261001-232922-fastfetch-random-ready/",
+  "localPostChangeBackup": "~/.local/state/holoarch/backups/20261001-233251-terminal-165hz-ready/",
   "fastfetchConfig": "home/.config/fastfetch/config.jsonc",
   "fastfetchLayoutSource": "StatIndet/dotfiles fastfetch/config.jsonc, pinned at 6947cdf70cddcf3d22532535ff5f47b5b434e170, adapted for this niri machine.",
   "fastfetchLogo": "Random portrait from ~/Pictures/Fastfetch_Picture; center crop matches current information height; images and cache private.",
@@ -54,5 +55,18 @@
     "description": "holoarch-terminal-ready-20261001-225905",
     "cleanup": "",
     "created": "2026-10-01T22:59:05"
+  },
+  "randomPortraitSnapshot": {
+    "config": "home",
+    "number": 923,
+    "description": "holoarch-fastfetch-random-20261001-232922",
+    "cleanup": ""
+  },
+  "builtInDisplay": {
+    "identity": "Tianma Microelectronics Ltd. 0x2031 Unknown",
+    "mode": "2560x1600@165.002",
+    "connectorAtVerification": "eDP-2",
+    "matchStableAcrossConnectorChanges": true,
+    "reason": "Panel preferred mode is 60.001Hz; supported 165.002Hz explicitly selected."
   }
 }
