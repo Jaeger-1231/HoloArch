@@ -151,7 +151,6 @@ bb12bca755e907fcf2a731f2e73330522d43e7f3fdc5f4b053805319cf2994b8  home/.config/w
 7d39b844cbef4a4e11e53f50edef9a643960b4d65aa58b1491571ef1cb4f1fa7  home/.config/waybar/scripts/select-network-tui.sh
 2ab8eeb4976b674c7d3e2857a1d5449c2b49262cc95ffce933f6303fb8747476  home/.config/waybar/scripts/toggle-bluetooth.sh
 29e94b25498cb2771c425d31b8c41adbdcb697d13677b90cee048829ce07c7c3  home/.config/waybar/style.css
-d8a0281fbc92367e81f1f4ce7a8c4d9dd6589f667ef3050f7870c9cb1527b1ac  home/.config/waybar-niri-Win11Like/colors.css
 4fef6dc51d4f89498a49a2628f682c0c7bddcc09b09a709a663f2d7a7dbdebcf  home/.config/waybar-niri-Win11Like/config.jsonc
 d294b4172b415443920e5469c9f190d074c76530e4ee12f2ae8285a6f228464d  home/.config/waybar-niri-Win11Like/logo/bluetooth.png
 fcd8a3ec72d352e1f20fefc696c86c238e3c5575eb3792f9fde892a20fe8347b  home/.config/waybar-niri-Win11Like/modules.jsonc
@@ -231,7 +230,7 @@ cee84627a7a75c689f059516fb4ecc7c3f388d69835e53ce66331970b92eb544  home/.local/sh
 d301e833fc75d1a4f4e378bda19d37a7eb3d27f07a5fc5685b5d080c80a51fce  home/.local/share/icons/Adwaita-Matugen-B/scalable/status/folder-open.svg
 4ac8cd23ba2c19be0df6d8e1c6656ca83de38c50c2cfaeb57372a5c1d96d733e  home/.local/share/icons/Adwaita-Matugen-B/scalable/status/user-trash-full.svg
 9ed0f00a0b0b4697f8e5c4d8e2f8715e8db5c95d5a45587976c2cc7e059484b3  inventory/backup-manifest.json
-8aacd95e6fb6b287dcb49547aeb6cb187e26376b8e261876fdc0fdb528bc158d  inventory/backup-record.json
+bf5ece291ae3bee72d2fccac0f1458a5c2c78a36c150c364e22d6e431e387f85  inventory/backup-record.json
 f17d5a6b96c38ff3d5ebec73136775f03023505e83d36de12aa97ec98ae9760e  inventory/flatpak-apps.tsv
 71ff7a6e248d9a0718344c957ec709cb6f0b18631682fa404d7cff2af3ff341d  inventory/os-release
 543cfc0af883c1027b4476ee87e44a519093c819e49a43eecc7030ddbdd2b56c  inventory/pacman-all.txt
@@ -240,7 +239,6 @@ d653a0daa5b6dc2e9b9188770d18de19c050b8c9c42224812dba3d1ab1975e45  inventory/pacm
 269ec2af1b59c514d78cf3b7f201cbd2ea43d998b18e8f96a91ecec31cbd04c6  inventory/pacman-foreign.txt
 7c24d16a25d3859507e4b0085b360642f1226d5c0ba8e8dd4b1b493fd4c9c959  inventory/pacman-official-explicit.txt
 972d0c854e9ca69f7897d93ad815e1b80623c0080bd71347a152f2a9b8b7ed45  system/etc/systemd/system/holo-power-mode-restore.service
-9bab450fb91bcc7d2ff1cae9927ac175a3eaa864abeab398cf7bef0287d73b88  system/etc/systemd/system/multi-user.target.wants/holo-power-mode-restore.service
 65df375f6d20b252e43e5e285d28593636c17f3d70d230a3e25843744b934397  system/etc/systemd/system/power-profiles-daemon.service.d/10-holo-power-mode.conf
 d48cc1f73a0f383507bb1c28c7a3bf6c4d09924cb65f14fcded886dca001edc3  system/usr/local/libexec/holo-power-gpu
 82e4dbe76a1c3eac500637965138b6b26d7950e4886143d29913f7cc18343d04  system/var/lib/holo-power-mode/desired

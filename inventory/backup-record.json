@@ -13,6 +13,24 @@
     "finding": "portal.Secret=gnome-keyring selects a backend and contains no credential",
     "unresolved": 0
   },
-  "snapshot_status": "pending",
-  "snapshots": {}
+  "snapshot_status": "complete",
+  "snapshots": {
+    "root": {
+      "number": 1119,
+      "type": "single",
+      "date": "2026-10-01 19:49:06",
+      "description": "holoarch-pre-clavis-20261001-194122",
+      "cleanup": ""
+    },
+    "home": {
+      "number": 915,
+      "type": "single",
+      "date": "2026-10-01 19:49:06",
+      "description": "holoarch-pre-clavis-20261001-194122",
+      "cleanup": ""
+    }
+  },
+  "configuration_commit": "de4dda4f408d072333110bdd5d6a88c9eccbaffc",
+  "publication_status": "configuration_uploaded",
+  "verified_at": "2026-10-01T19:49:07.016014+08:00"
 }
