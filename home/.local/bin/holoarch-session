@@ -32,7 +32,21 @@ legacy() {
     run_legacy swayosd /usr/bin/swayosd-server
     run_legacy nightlight /usr/bin/wlsunset -l 36.5 -L 128.0 -t 5000 -T 6500 -d 1800
     run_legacy wallpaper-sync "$NIRI_DIR/scripts/awww-sync-outputs"
-    waypaper --restore
+    # Waypaper is installed under the old Conda prefix on this machine.
+    # Restore the saved image through the wallpaper backend directly.
+    local wallpaper
+    wallpaper=$(/usr/bin/python3 - <<'PY'
+import configparser
+from pathlib import Path
+settings = configparser.ConfigParser()
+settings.read(Path.home() / ".config/waypaper/config.ini")
+print(Path(settings["Settings"]["wallpaper"]).expanduser())
+PY
+    )
+    [[ -f "$wallpaper" ]] || return 1
+    awww img --transition-type none "$wallpaper"
+    "$HOME/.config/scripts/matugen-update.sh" --force "$wallpaper"
+    "$HOME/.config/scripts/niri_set_overview_blur_dark_bg.sh"
 }
 
 clavis() {

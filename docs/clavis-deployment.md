@@ -45,12 +45,20 @@ Shell 读取 `~/.local/share/holoarch/current` 指向的发布。`~/.config/quic
 - 通知 D-Bus 名称由 Clavis Quickshell 持有，旧对应进程停止。
 - key clipboard status 为 available/watcherRunning=true；录音/录屏状态接口可用。
 - 最终 niri validate 通过；实际维护状态为“平衡 / 混合显卡 / Firefox 集显”。
+- 实际测试 legacy 恢复：旧任务栏、通知、剪贴板服务启动，双屏恢复原壁纸；已切回 Clavis。旧 Waypaper 位于 Conda 前缀，恢复工具直接调用 awww 和原配色/overview 脚本。
+- 已提交源码的正式构建再次通过部署门禁：27/27 CTest。
 
 键盘 Caps/Num Lock 原始 evdev 访问与 CPU 能耗 helper 授权未启用，键盘灯后端不可用、部分功耗指标为空。key doctor.runtimeReady 因键盘能力未启用为 false，其他所需命令无缺项。
 
 Clavis 原生锁屏的密码解锁、真实合盖/恢复、显示器物理热插拔及实际录音/录屏交互需要本人验收。本次未切换 GPU、重启或执行系统更新。初次不存在的头像/历史文件会有日志提示，界面使用默认头像。
 
 截图在 `~/.local/state/holoarch/verification/`，日志在 `~/.cache/holoarch-build/`，均保留本机。
+
+## 部署后的恢复点
+
+2026-10-01 21:10:34 创建并核对 Snapper 单次快照：**root #1126、home #918**，描述 `holoarch-clavis-ready-20261001-211034`，无自动清理规则。迁移前 **root #1119、home #915** 继续保留。
+
+本机备份记录及 Git bundle 位于 `~/.local/state/holoarch/backups/20261001-211034-clavis-ready/`。个人运行状态、截图和私密配置留在本机；公开仓库保存源码、部署配置与验收记录。
 
 ## 修改与发布
 

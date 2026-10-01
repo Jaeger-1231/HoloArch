@@ -49,22 +49,33 @@
     "cpuEnergyAuthorization": false,
     "nativeLockUnlock": "manual acceptance pending",
     "physicalHotplug": "manual acceptance pending",
-    "actualRecordAudio": "manual acceptance pending"
+    "actualRecordAudio": "manual acceptance pending",
+    "legacyRestore": "passed: legacy Waybar/mako/clipboard active, wallpaper verified on both outputs; switched back to Clavis",
+    "finalReleaseCtestPassed": 27
   },
   "preMigrationSnapshots": {
     "root": 1119,
     "home": 915
   },
+  "postMigrationSnapshots": {
+    "root": 1126,
+    "home": 918,
+    "description": "holoarch-clavis-ready-20261001-211034",
+    "createdAt": "2026-10-01T21:10:34+08:00",
+    "cleanup": ""
+  },
   "runtimePaths": {
     "shell": "~/.local/share/holoarch/current",
     "key": "~/.local/share/holoarch/key-current",
     "userConfig": "~/.config/clavis",
-    "verification": "~/.local/state/holoarch/verification"
+    "verification": "~/.local/state/holoarch/verification",
+    "shellRelease": "~/.local/share/holoarch/releases/2693fb13d215-20261001-205119"
   },
   "shellcheck": {
     "version": "0.11.0",
     "source": "https://github.com/koalaman/shellcheck/releases/download/v0.11.0/shellcheck-v0.11.0.linux.x86_64.tar.xz",
     "archiveSha256": "8c3be12b05d5c177a04c29e3c78ce89ac86f1595681cab149b65b97c4e227198",
     "deployment": "~/.local/bin/shellcheck"
-  }
+  },
+  "shellSourceCommit": "2693fb13d215"
 }
