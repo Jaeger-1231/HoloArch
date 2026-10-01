@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = key-cli
+Target = key-cli-cpu-power-access
+
+[Action]
+Description = Restore opted-in key-cli capabilities
+When = PostTransaction
+Exec = /usr/bin/bash -c 'if [[ -x /usr/lib/key-cli/cpu-power-access ]]; then exec /usr/lib/key-cli/cpu-power-access enable; fi'

@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+"""Check the files that key-cli promises to ship in its wheel."""
+
+from __future__ import annotations
+
+import sys
+import zipfile
+from pathlib import Path
+
+
+def main() -> int:
+    if len(sys.argv) != 2:
+        print("usage: check-wheel.py WHEEL", file=sys.stderr)
+        return 2
+
+    wheel = Path(sys.argv[1])
+    with zipfile.ZipFile(wheel) as archive:
+        names = set(archive.namelist())
+        dist_info = sorted(
+            name.split("/", 1)[0] for name in names if name.endswith(".dist-info/METADATA")
+        )
+        if not dist_info:
+            raise SystemExit("wheel has no dist-info metadata")
+        from email.parser import BytesParser
+
+        wheel_metadata = BytesParser().parsebytes(archive.read(f"{dist_info[0]}/METADATA"))
+        expected_version = (
+            (Path(__file__).resolve().parents[1] / "src/key_cli/VERSION").read_text().strip()
+        )
+        if (
+            wheel_metadata["Version"] != expected_version
+            or archive.read("key_cli/VERSION").decode().strip() != expected_version
+        ):
+            raise SystemExit("wheel metadata and runtime version disagree")
+        if "key_cli/__init__.py" not in names:
+            raise SystemExit("wheel does not contain the key_cli package")
+
+        entry_points = f"{dist_info[0]}/entry_points.txt"
+        if entry_points not in names:
+            raise SystemExit("wheel does not contain console entry points")
+        if b"key = key_cli:main" not in archive.read(entry_points):
+            raise SystemExit("wheel entry point does not expose key_cli:main")
+
+        if any("/systemd/" in name or "/udev/" in name for name in names):
+            raise SystemExit(
+                "system resources are deployed separately, not carried in the Python wheel"
+            )
+        if "key_cli/keyboard/backend.py" not in names:
+            raise SystemExit("wheel is missing the keyboard backend")
+
+    print(f"wheel package check passed: {wheel.name}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

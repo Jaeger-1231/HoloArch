@@ -1,0 +1,235 @@
+{
+  "name": "key-cli",
+  "repository": "StatIndet/key-cli",
+  "versionFile": "src/key_cli/VERSION",
+  "arch": "x86_64",
+  "sourceRoots": [
+    "src",
+    "native",
+    "scripts",
+    "tests",
+    "packaging",
+    "docs",
+    "systemd",
+    "completions",
+    "LICENSE",
+    "README.md",
+    "AGENTS.md",
+    "pyproject.toml",
+    "MANIFEST.in"
+  ],
+  "build": [
+    {
+      "package": "python-build",
+      "purpose": "PEP 517 wheel build",
+      "defaultInstall": true
+    },
+    {
+      "package": "python-installer",
+      "purpose": "Wheel installation",
+      "defaultInstall": true
+    },
+    {
+      "package": "python-setuptools",
+      "purpose": "Build backend",
+      "defaultInstall": true
+    },
+    {
+      "package": "python-wheel",
+      "purpose": "Wheel tooling",
+      "defaultInstall": true
+    },
+    {
+      "package": "cmake",
+      "purpose": "Native system monitor build",
+      "defaultInstall": true
+    },
+    {
+      "package": "ninja",
+      "purpose": "Native build executor",
+      "defaultInstall": true
+    },
+    {
+      "package": "qt6-base",
+      "purpose": "Qt Core sampling library",
+      "defaultInstall": true
+    }
+  ],
+  "check": [
+    {
+      "package": "python-pytest",
+      "purpose": "CLI and installer contracts",
+      "defaultInstall": true
+    },
+    {
+      "package": "python-evdev",
+      "purpose": "Keyboard backend",
+      "defaultInstall": true
+    },
+    {
+      "package": "python-pyudev",
+      "purpose": "Device discovery",
+      "defaultInstall": true
+    },
+    {
+      "package": "git",
+      "purpose": "Isolated source archive contract fixtures",
+      "defaultInstall": true
+    }
+  ],
+  "ci": [
+    {
+      "package": "ruff",
+      "purpose": "Python formatting and lint",
+      "defaultInstall": true
+    },
+    {
+      "package": "shellcheck",
+      "purpose": "Shell quality checks",
+      "defaultInstall": true
+    },
+    {
+      "package": "git",
+      "purpose": "Source metadata",
+      "defaultInstall": true
+    },
+    {
+      "package": "actionlint",
+      "purpose": "GitHub Actions workflow validation",
+      "defaultInstall": false
+    }
+  ],
+  "packages": {
+    "key-cli": {
+      "runtime": [
+        {
+          "package": "python>=3.10",
+          "purpose": "CLI interpreter",
+          "defaultInstall": true
+        },
+        {
+          "package": "python-evdev>=1.7",
+          "purpose": "Keyboard events",
+          "defaultInstall": true
+        },
+        {
+          "package": "python-pyudev>=0.24",
+          "purpose": "Keyboard discovery",
+          "defaultInstall": true
+        },
+        {
+          "package": "cliphist",
+          "purpose": "Clipboard history",
+          "defaultInstall": true
+        },
+        {
+          "package": "wl-clipboard",
+          "purpose": "Wayland clipboard",
+          "defaultInstall": true
+        },
+        {
+          "package": "fd",
+          "purpose": "Spotlight literal file search",
+          "defaultInstall": true
+        },
+        {
+          "package": "systemd",
+          "purpose": "busctl FileManager1 desktop requests",
+          "defaultInstall": true
+        },
+        {
+          "package": "glib2",
+          "purpose": "GIO desktop opening with Terminal=true support",
+          "defaultInstall": true
+        },
+        {
+          "package": "qt6-base",
+          "purpose": "Native system sampler runtime",
+          "defaultInstall": true
+        }
+      ],
+      "optional": [
+        {
+          "package": "key-cli-keyboard-access",
+          "purpose": "Whole keyboard event device access",
+          "defaultInstall": false
+        },
+        {
+          "package": "key-cli-cpu-power-access",
+          "purpose": "Restricted CPU energy helper authorization",
+          "defaultInstall": false
+        },
+        {
+          "package": "quickshell",
+          "purpose": "Shell lifecycle and IPC",
+          "defaultInstall": true
+        },
+        {
+          "package": "gpu-screen-recorder",
+          "purpose": "Screen recording",
+          "defaultInstall": true
+        },
+        {
+          "package": "ffmpeg",
+          "purpose": "Audio recording and GIF conversion",
+          "defaultInstall": true
+        },
+        {
+          "package": "libpulse",
+          "purpose": "pactl audio source discovery",
+          "defaultInstall": true
+        },
+        {
+          "package": "slurp",
+          "purpose": "Region selection",
+          "defaultInstall": true
+        },
+        {
+          "package": "xdg-utils",
+          "purpose": "Open files and query defaults",
+          "defaultInstall": true
+        },
+        {
+          "package": "xdg-terminal-exec",
+          "purpose": "Terminal file managers",
+          "defaultInstall": true
+        },
+        {
+          "package": "libqalculate",
+          "purpose": "Spotlight calculator (qalc)",
+          "defaultInstall": false
+        },
+        {
+          "package": "tzdata",
+          "purpose": "Spotlight IANA time zone conversions",
+          "defaultInstall": false
+        }
+      ]
+    },
+    "key-cli-keyboard-access": {
+      "runtime": [
+        {
+          "package": "systemd",
+          "purpose": "logind and udev uaccess",
+          "defaultInstall": true
+        }
+      ],
+      "optional": []
+    },
+    "key-cli-cpu-power-access": {
+      "runtime": [
+        {
+          "package": "key-cli",
+          "purpose": "Owns the native CPU energy helper",
+          "defaultInstall": true
+        },
+        {
+          "package": "libcap",
+          "purpose": "File capability management",
+          "defaultInstall": true
+        }
+      ],
+      "optional": []
+    }
+  }
+}

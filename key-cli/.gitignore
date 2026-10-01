@@ -1,0 +1,21 @@
+.build/
+build/
+dist/
+*.egg-info/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+*.o
+*.a
+*.so
+*.so.*
+*.log
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+
+# Local packaging and CI artifacts
+.packaging/
