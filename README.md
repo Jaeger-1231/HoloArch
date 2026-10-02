@@ -1,6 +1,8 @@
-# HoloArch
+# HoloArch_Laptop
 
 这台 Arch / niri 电脑的 Clavis 桌面源码、个人适配和恢复基线。Clavis 与 key-cli 由本仓库自行构建、部署和维护。
+
+本仓库保留笔记本的双显卡、电源与电量配置；独显台式机版本见 [HoloArch_Desktop](https://github.com/Jaeger-1231/HoloArch_Desktop)。本地源码路径仍为 `~/Projects/HoloArch`。
 
 2026-10-01 已完成本机编译、双屏图形试运行和正式自启动接入。首次备份保留在 `pre-clavis-20261001` 标签；原始归档和 root #1119 / home #915 快照仍在本机。
 
